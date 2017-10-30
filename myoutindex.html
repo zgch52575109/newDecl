@@ -1,0 +1,1432 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>出境申报</title>
+		<link rel="stylesheet" type="text/css" href="css/myreset.css"/>
+		<link rel="stylesheet" href="css/decl.css" />
+		<style>
+
+		</style>
+	</head>
+	<body>
+		
+		<div class="decl">
+			
+			<div class="dashedbar"><span>基本信息</span></div>		
+		
+			<table class="table" >
+				<tbody>
+					<tr>
+						<th><i>*</i>录入序号</th>
+						<td><input class="valid" type="text"></td>
+						
+						<th>报检号</th>
+						<td><input type="text" readonly="readonly"></td>
+						
+						<th>报检日期</th>
+						<td><input class="usedatepicker" type="text"></td>
+						
+						<th><i>*</i>报检类别</th>
+						<td>
+							<input id="seldeclName" class="valid" type="text">
+							<em class="arrow"></em>
+						</td>
+						
+					</tr>
+					<tr>
+						
+						<th><i>*</i>报检登记号</th>
+						<td><input class="valid" type="text"></td>
+						
+						<th><i>*</i>单位名称</th>
+						<td><input class="valid" type="text"></td>
+						
+						<th>企业资质</th>
+						<td colspan="3" class="hasbtn hasbtn5 hasinp">
+							<div class="qyzz-inp">
+								<input type="text" readonly="readonly" />
+								<i></i>
+								<input type="text" readonly="readonly" />
+							</div>
+							<p class="qyzz-btn">
+								<button class="enterprise-btn">选择</button>
+								<button><<</button>
+								<button>>></button>
+								<button>删除</button>
+								<span>0/0</span>
+							</p>
+						</td>
+						
+					</tr>
+					<tr>
+						<th><i>*</i>报检员编码</th>
+						<td><input class="valid" type="text"></td>
+						
+						<th><i>*</i>报检员姓名</th>
+						<td><input class="valid" type="text"></td>
+						
+						<th><i>*</i>联系人</th>
+						<td><input class="valid" type="text"></td>
+						
+						<th><i>*</i>联系电话</th>
+						<td><input class="valid" type="text"></td>
+						
+					</tr>
+					
+					<tr>
+						<th><i>*</i>发货人代码</th>
+						<td><input class="valid" type="text"></td>
+						
+						<th><i>*</i>发货人中文</th>
+						<td><input class="valid" type="text"></td>
+						
+						<th>发货人英文</th>
+						<td><input type="text"></td>
+						
+						<th>发货人地址</th>
+						<td><input type="text"></td>
+						
+					</tr>
+					<tr>
+						<th>收货人代码</th>
+						<td><input type="text"></td>
+						
+						<th>收货人中文</th>
+						<td><input type="text"></td>
+						
+						<th>收货人英文</th>
+						<td><input type="text"></td>
+						
+						<th>收货人地址</th>
+						<td><input type="text"></td>
+						
+					</tr>
+					
+					
+					
+				</tbody>
+			</table>
+			
+			<div class="dashedbar"><span>基本信息【其他】</span></div>
+			
+			<table class="table" >
+				<tbody>
+					<tr>
+						<th><i>*</i>报检地</th>
+						<td><input class="valid" type="text"></td>
+						
+						<th><i>*</i>领证地</th>
+						<td><input class="valid" type="text"></td>
+						
+						<th><i>*</i>施检地</th>
+						<td><input class="valid" type="text"></td>
+						
+						<th>口岸机构</th>
+						<td><input type="text"></td>
+						
+					</tr>
+					<tr>
+						<th>合同号</th>
+						<td><input type="text"></td>
+						
+						<th><i>*</i>运输方式</th>
+						<td><input class="valid" type="text"></td>
+						
+						<th>运输工具</th>
+						<td><input type="text"></td>
+						
+						<th>号码</th>
+						<td><input type="text"></td>
+						
+					</tr>
+					<tr>
+						<th><i>*</i>贸易方式</th>
+						<td><input class="valid" type="text"></td>
+						
+						<th><i>*</i>输往国家</th>
+						<td><input class="valid" type="text"></td>
+						
+						<th><i>*</i>离境口岸</th>
+						<td><input class="valid" type="text"></td>
+						
+						<th>到达口岸</th>
+						<td><input type="text"></td>
+						
+					</tr>
+					<tr>
+						<th>存放地点</th>
+						<td><input type="text"></td>
+						
+						<th>发货日期</th>
+						<td><input type="text"></td>
+						
+						<th>报关海关</th>
+						<td><input type="text"></td>
+						
+						<th>海关注册号</th>
+						<td><input type="text"></td>
+						
+					</tr>
+					<tr>
+						<th>关联报检号</th>
+						<td><input type="text"></td>
+						
+						<th>关联理由</th>
+						<td colspan="3"><input type="text"></td>
+						<td colspan="2">自动生成无纸化<input type="checkbox" /></td>
+						
+					</tr>
+					<tr>
+						<th>标记及号码</th>
+						<td colspan="3" class="hasbtn hasbtn2">
+							<div>
+								<input readonly="readonly" type="text">
+							</div>
+							<p>
+								<button class="marknum-btn">选择</button>
+								<button class="attached-btn">附页</button>
+							</p>
+							
+						</td>
+						<th>特种业务标识</th>
+						<td class="hasbtn">
+							<div>
+								<input readonly="readonly" type="text">
+							</div>
+							<p>
+								<button class="special-btn">选择</button>
+							</p>
+						</td>
+						<th>特殊通关模式</th>
+						<td class="hasbtn">
+							<div>
+								<input readonly="readonly" type="text">
+							</div>
+							<p>
+								<button class="clearance-btn">选择</button>
+							</p>
+						</td>
+					</tr>
+					<tr>
+						<th>需要证单</th>
+						<td colspan="3" class="hasbtn">
+							<div>
+								<input type="text">
+							</div>
+							<p>
+								<button class="bill-btn">选择</button>
+							</p>
+						</td>
+						<th>特殊要求</th>
+						<td colspan="3" class="hasbtn">
+							<div>
+								<input readonly="readonly" type="text">
+							</div>
+							<p>
+								<button class="requirement-btn">选择</button>
+							</p>
+						</td>
+					</tr>
+					
+					<tr>
+						<th><i>*</i>随附单据</th>
+						<td colspan="4" class="hasbtn hasbtn4">
+							<div>
+								<input class="valid" type="text">
+							</div>
+							<p>
+								<button class="attachNotes-btn">选择</button>
+								<button><<</button>
+								<button>>></button>
+								<button>删除</button>
+							</p>
+						</td>
+						<td colspan="3" class="hasbtn hasbtn2 hasinp">
+							<div>
+								<input class="valid" type="text">
+								<i></i>
+								<input class="valid" type="text">
+							</div>
+							<p>
+								<span>0/0</span>
+								<button class="attachUser-btn">使用人</button>
+							</p>
+						</td>
+					</tr>
+					
+					
+					
+					
+				</tbody>
+			</table>			
+			<div class="dashedbar"><span>货物信息</span></div>	
+			<table class="table" > 
+				<tbody>
+					<tr>
+						<th><i>*</i>HS编码</th>
+						<td>
+							<input class="valid" type="text" />
+						</td>
+						<th><i>*</i>CIQ代码</th>
+						<td>
+							<input class="valid" type="text" />
+						</td>
+						<th>检疫类别</th>
+						<td class="hasinp">
+							<input readonly="readonly" type="text" />
+							<i></i>
+							<input readonly="readonly" type="text" />
+						</td>
+						<th>货物属性</th>
+						<td class="hasbtn">
+							<div>
+								<input type="text" />
+							</div>
+							<p>
+								<button class="cargoAttribute-btn">选择</button>
+							</p>
+						</td>
+					</tr>
+					<tr>
+						<th><i>*</i>货物名称</th>
+						<td>
+							<input class="valid" type="text" />
+						</td>
+						<th>英文名称</th>
+						<td>
+							<input type="text" />
+						</td>
+						<th>货物规格</th>
+						<td>
+							<input type="text" />
+						</td>
+						<th><i>*</i>用途</th>
+						<td class="hasbtn">
+							<input class="valid" type="text" />
+						</td>
+					</tr>
+					<tr>
+						<th>报检数量</th>
+						<td class="hasinp">
+							<input type="text" />
+							<i></i>
+							<input type="text" />
+						</td>
+						<th>报检重量</th>
+						<td class="hasinp">
+							<input type="text" />
+							<i></i>
+							<input type="text" />
+						</td>
+						<th>HS标准量</th>
+						<td class="hasinp">
+							<input class="valid" type="text" />
+							<i></i>
+							<input type="text" />
+						</td>
+						<th>包装数量</th>
+						<td class="hasinp hasbtn">
+							<div>
+								<input class="valid" type="text" />
+								<i></i>
+								<input class="valid" type="text" />
+							</div>
+							<p>
+								<button class="package-btn">选择</button>
+							</p>	
+						</td>
+					</tr>
+					<tr>
+						<th>货物单价</th>
+						<td>
+							<input type="text" />
+						</td>
+						<th>货物总值</th>
+						<td class="hasinp">
+							<input class="valid" type="text" />
+							<i></i>
+							<input class="valid" type="text" />
+						</td>
+						<th>原产地</th>
+						<td>
+							<input class="valid" type="text" />
+						</td>
+						<th>生产日期</th>
+						<td>
+							<input class="valid" type="text" />
+						</td>
+					</tr>
+					<tr>
+						<th>货物型号</th>
+						<td>
+							<input type="text" />
+						</td>
+						<th>货物品牌</th>
+						<td>
+							<input type="text" />
+						</td>
+						<th>成分/原料</th>
+						<td>
+							<input type="text" />
+						</td>
+						<th>生产批号</th>
+						<td>
+							<input type="text" />
+						</td>
+					</tr>
+					<tr>
+						<th>生产单位注册号</th>
+						<td>
+							<input class="valid" type="text" />
+						</td>
+						<th>生产单位名称</th>
+						<td colspan="3">
+							<input class="valid" type="text" />
+						</td>
+						<td colspan="2">非危险化学品<input type="checkbox" /></td>
+					</tr>
+					<tr>
+						<th>产品资质</th>
+						<td colspan="3" class="hasbtn hasbtn5 hasinp">
+							<div>
+								<input readonly="readonly" type="text" />
+								<i></i>
+								<input readonly="readonly" type="text" />
+							</div>
+							<p>
+								<button class="license-btn">选择</button>
+								<button><<</button>
+								<button>>></button>
+								<button>删除</button>
+								<span>0/0</span>
+							</p>
+						</td>
+						<td colspan="4" class="hasbtn hasbtn4 hasbtnlg">
+							<p>
+								<button class="boxCorrespondence-btn">箱货对应关系</button>
+								<button class="spare-btn">备用信息</button>
+								<button class="danger-btn">危险货物信息</button>
+								<button class="goodsValue-btn">查看货物总信息</button>
+							</p>
+							
+						</td>
+						
+					</tr>
+					
+					
+				</tbody>
+				
+			
+			</table>	
+			<div class="goods">
+				<table >
+					<thead>
+						<tr>
+							<th>序号</th>
+							<th>HS编码</th>
+							<th>ECIQ代码</th>
+							<th>原产国</th>
+							<th>货物名称</th>
+							<th>报检数量</th>
+							<th>报检重量</th>
+							<th>货物总值</th>
+							<th>用途</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1</td>
+							<td>0301959000</td>
+							<td>0301959000999</td>
+							<td>衢州市江山市</td>
+							<td>其他南方蓝鳍金枪鱼其他南方蓝鳍金枪鱼其他南方蓝鳍金枪鱼(Thunnus maccoyii)</td>
+							<td>10</td>
+							<td>11</td>
+							<td>111</td>
+							<td>食用</td>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td>0301959000</td>
+							<td>0301959000999</td>
+							<td>衢州市江山市</td>
+							<td>其他南方蓝鳍金枪鱼其他南方蓝鳍金枪鱼其他南方蓝鳍金枪鱼(Thunnus maccoyii)</td>
+							<td>10</td>
+							<td>11</td>
+							<td>111</td>
+							<td>食用</td>
+						</tr>
+					</tbody>
+					
+				</table>
+				
+			</div>
+			<div class="decl-btn">
+				<span>第1项</span>
+				<span>共1项</span>
+				<button>第一条</button>
+				<button>上一条</button>
+				<button>下一条</button>
+				<button>末一条</button>
+				<button>添加</button>
+				<button>插入</button>
+				<button>复制</button>
+				<button>删除</button>
+			</div>
+			<div class="dashedbar"><span>集装箱信息</span></div>	
+			<table class="table" >
+				<tbody>
+
+					<tr>
+						<th>集装箱规格</th>
+						<td><input type="text"></td>
+						<th>数量</th>
+						<td><input type="text"></td>
+						
+						<th>号码</th>
+						<td class="hasbtn">
+							<div><input type="text"></div>
+							<p><button class="containerNum-btn">选择</button></p>
+						</td>
+						<th>拼箱标识</th>
+						<td><input type="checkbox" /></td>
+						
+					</tr>
+					
+				</tbody>
+			</table>			
+			<div class="decl-btn">
+				<span>第1项</span>
+				<span>共1项</span>
+				<button>第一条</button>
+				<button>上一条</button>
+				<button>下一条</button>
+				<button>末一条</button>
+				<button>添加</button>
+				<button>插入</button>
+				<button>复制</button>
+				<button>删除</button>
+			</div>
+			
+			
+			
+			<!--企业资质弹窗-->
+			<div class="usePopup reverse enterprise">
+				<div class="usePopup-top">
+					<table class="enterprise-list tableclick" >
+						<thead>
+							<tr>
+								<th>序号</th>
+								<th>资质类别</th>
+								<th>资质名称</th>
+								<th>资质编号</th>
+								<th>组织机构代码</th>
+								<th>企业名称</th>
+								<!--<th>截止日期</th>-->
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>1</td>
+								<td>0301959000</td>
+								<td>0301959000999</td>
+								<td>衢州市江山市</td>
+								<td>(Thunnus maccoyii)</td>
+								<td>10</td>
+								<!--<td>11</td>-->
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>0301959000</td>
+								<td>0301959000999</td>
+								<td>衢州市江山市</td>
+								<td>(Thunnus maccoyii)</td>
+								<td>10</td>
+								<!--<td>11</td>-->
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>0301959000</td>
+								<td>0301959000999</td>
+								<td>衢州市江山市</td>
+								<td>(Thunnus maccoyii)</td>
+								<td>10</td>
+								<!--<td>11</td>-->
+							</tr>
+						</tbody>
+					</table>					
+				</div>
+				<div class="usePopup-bottom">
+					<table class="table" >
+						<tr>
+							<th><i>*</i>企业资质类别</th>
+							<td><input class="valid" type="text" /></td>
+							<th><i>*</i>企业资质编号</th>
+							<td><input class="valid" type="text" /></td>
+						</tr>
+						<tr>
+							<th><i>*</i>企业组织机构代码</th>
+							<td><input class="valid" type="text" /></td>
+							<th><i>*</i>企业名称</th>
+							<td><input class="valid" type="text" /></td>
+						</tr>
+					</table>					
+					<div class="decl-btn">
+						<button>添加</button>
+						<button>删除</button>
+						<button>确定</button>
+						<button>取消</button>
+					</div>							
+				</div>
+		
+
+			</div>
+			
+			<!--标记及号码弹窗-->
+			<div class="usePopup hasarea marknum">
+				<div class="usePopup-top">
+					<table>
+						<tbody>
+							<tr>
+								<td><textarea>N/M</textarea></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="usePopup-bottom">
+					<div class="decl-btn center">
+						<button>确定</button>
+						<button>取消</button>
+					</div>						
+				</div>
+			</div>
+			<!--标记及号码 附页弹窗-->
+			<div class="attached">
+				<div>
+					<span>附件：</span>
+					<input type="text" class="attached-file-name" placeholder="jpg,gif,bmp,png的图片大小为1M内" readonly="readonly" />
+					<button class="button attached-file-btn">本地浏览</button>
+				</div>
+				<div>
+					<ul>
+						<li class="hide">
+							<span></span>
+							<input class="attached-file hide" type="file" />
+						</li>
+					</ul>
+					<p>
+						<button class="button attached-file-add">添加</button>
+						<button class="button">删除</button>
+					</p>					
+				</div>
+				<div class="decl-btn center">
+					<button>确定</button>
+					<button>取消</button>
+				</div>	
+			</div>
+			
+			<!--特种业务标识-->
+			<div class="special">
+				<ul>
+					<li>
+						<input type="checkbox" />
+						<label>国际赛事</label>
+					</li>
+					<li>
+						<input type="checkbox" />
+						<label>国际援助物资</label>
+					</li>
+					<li>
+						<input type="checkbox" />
+						<label>特殊进出军工物资</label>
+					</li>
+					<li>
+						<input type="checkbox" />
+						<label>国际会议</label>
+					</li>
+				</ul>
+				<div class="decl-btn center">
+					<button>确定</button>
+				</div>	
+			</div>
+			
+			<!--特殊通关模式-->
+			<div class="clearance">
+				<ul>
+					<li>
+						<input type="checkbox" />
+						<label>执行放行</label>
+					</li>
+					<li>
+						<input type="checkbox" />
+						<label>绿色通道</label>
+					</li>
+					<li>
+						<input type="checkbox" />
+						<label>外交礼仪</label>
+					</li>
+				</ul>
+				<div class="decl-btn center">
+					<button>确定</button>
+				</div>	
+			</div>
+			
+			<!--需要证单-->
+			<div class="usePopup bill">
+				<div class="usePopup-top">
+					<div class="bill-table">
+						<table class="table" >
+							<thead>
+								<tr>
+									<th>序号</th>
+									<th>代码</th>
+									<th>单据类型</th>
+									<th>正本</th>
+									<th>副本</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><input type="checkbox" /><label>1</label></td>
+									<td>11</td>
+									<td>品质证书</td>
+									<td><input type="text" value="1" /></td>
+									<td><input type="text" value="2" /></td>
+								</tr>
+								
+							</tbody>
+						</table>					
+					</div>
+				</div>
+				<div class="usePopup-bottom">
+					<div class="decl-btn center">
+						<button>确定</button>
+						<button>取消</button>
+					</div>	
+				</div>			
+			</div>
+			
+			<!--特殊要求弹窗-->
+			<div class="usePopup hasarea requirement">
+				<div class="usePopup-top">
+					<table>
+						<tbody>
+							<tr>
+								<td><textarea>N/M</textarea></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="usePopup-bottom">
+					<div class="decl-btn center">
+						<button>确定</button>
+						<button>取消</button>
+					</div>						
+				</div>
+			</div>
+			
+			<!--随附单据-->
+			<div class="usePopup attachNotes">
+				<div class="usePopup-top">
+					<table class="table" >
+						<thead>
+							<tr>
+								<th>序号</th>
+								<th>代码</th>
+								<th>名称</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><input type="checkbox" /><label>1</label></td>
+								<td>11</td>
+								<td>品质证书</td>
+							</tr>
+						</tbody>
+					</table>					
+				</div>
+
+				<div class="usePopup-bottom">
+					<table class="table" >
+						<tr>
+							<th>代码</th>
+							<td><input readonly="readonly" type="text" /></td>
+							<th>单据名称</th>
+							<td><input readonly="readonly" type="text" /></td>
+							<th>核销明细余量</th>
+							<td><input type="text" /></td>
+						</tr>
+						<tr>
+							<th>单据编号</th>
+							<td><input type="text" /></td>
+							<th>核销货物序号</th>
+							<td><input type="text" /></td>
+							<th>核销数量</th>
+							<td><input type="text" /></td>
+						</tr>
+						<tr>
+							<th>核销后余量</th>
+							<td><input type="text" /></td>
+							<td colspan="4"></td>
+						</tr>
+						
+					</table>
+					<div class="decl-btn">
+						<button><<</button>
+						<button><</button>
+						<button>></button>
+						<button>>></button>
+						<button>添加</button>
+						<button>删除</button>
+					</div>	
+					<div class="decl-btn">
+						<button>清空</button>
+						<button>确定</button>
+						<button>取消</button>
+					</div>						
+				</div>
+			</div>
+
+			
+			<!--使用人-->
+			<div class="usePopup attachUser">
+				<div class="usePopup-top">
+					<table class="table" >
+						<thead>
+							<tr>
+								<th>序号</th>
+								<th>使用人代码</th>
+								<th>使用人名称</th>
+								<th>使用单位联系人</th>
+								<th>使用单位联系电话</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><input type="checkbox" /><label>1</label></td>
+								<td>116301130</td>
+								<td>孙杰</td>
+								<td>速立达</td>
+								<td>18806211810</td>
+							</tr>
+						</tbody>
+					</table>					
+				</div>
+				<div class="usePopup-bottom">
+					<table class="table" >
+						<tr>
+							<th>使用人代码</th>
+							<td><input type="text" /></td>
+							<th>使用人名称</th>
+							<td><input type="text" /></td>
+						</tr>
+						<tr>
+							<th>使用单位联系人</th>
+							<td><input type="text" /></td>
+							<th>使用单位联系电话</th>
+							<td><input type="text" /></td>
+						</tr>
+						
+					</table>
+					<div class="decl-btn">
+						<button>增加</button>
+						<button>修改</button>
+						<button>删除</button>
+						<button>确定</button>
+						<button>取消</button>
+					</div>						
+				</div>
+			</div>
+
+			
+			<!--货物属性-->
+			<div class="usePopup cargoAttribute">
+				<div class="usePopup-top">
+					<table >
+						<thead>
+							<tr>
+								<th>序号</th>
+								<th>代码</th>
+								<th>名称</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><input type="checkbox" /><label>1</label></td>
+								<td>11</td>
+								<td>孙杰</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="usePopup-bottom">
+					<div class="decl-btn center">
+						<button>确定</button>
+						<button>取消</button>
+					</div>						
+				</div>
+			</div>
+
+			<!--包装数量信息-->
+			<div class="usePopup reverse package">
+				<div class="usePopup-top">
+					<table >
+						<thead>
+							<tr>
+								<th>序号</th>
+								<th>种类代码</th>
+								<th>种类名称</th>
+								<th>种类简称</th>
+								<th>件数</th>
+								<th>是否主包</th>
+								<th>材料种类</th>
+								<th>加工厂家</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><input type="checkbox" /><label>1</label></td>
+								<td>11</td>
+								<td>孙杰</td>
+								<td>孙杰</td>
+								<td>孙杰</td>
+								<td>孙杰</td>
+								<td>孙杰</td>
+								<td>孙杰</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="usePopup-bottom">
+					<table class="table" >
+						<tr>
+							<th>包装类型</th>
+							<td><input type="text" /></td>
+							<th>包装件数</th>
+							<td><input type="text" /></td>
+							<th>主要包装</th>
+							<td><input type="text" /></td>
+						</tr>
+						<tr>
+							<th>加工厂家</th>
+							<td><input type="text" /></td>
+							<th>材料种类</th>
+							<td><input type="text" /></td>
+							<th>辅助包装材料长</th>
+							<td><input type="text" /></td>
+						</tr>
+						<tr>
+							<th>辅助包装材料宽</th>
+							<td><input type="text" /></td>
+							<th>辅助包装材料高</th>
+							<td><input type="text" /></td>
+						</tr>
+					</table>
+					<div class="decl-btn">
+						<button>添加</button>
+						<button>删除</button>
+						<button>确定</button>
+						<button>取消</button>
+					</div>						
+				</div>
+			</div>
+
+			<!--许可证信息-->
+			<div class="usePopup reverse license">
+				<div class="usePopup-top">
+					<table >
+						<thead>
+							<tr>
+								<th>序号</th>
+								<th>类别代码</th>
+								<th>类别名称</th>
+								<th>编号</th>
+								<th>核明细号</th>
+								<th>核销数量</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><input type="checkbox" /><label>1</label></td>
+								<td>11</td>
+								<td>孙杰</td>
+								<td>孙杰</td>
+								<td>孙杰</td>
+								<td>孙杰</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="usePopup-bottom">
+					<table class="table" >
+						<tr>
+							<th>许可证类型</th>
+							<td><input type="text" /></td>
+							<th>许可证编号</th>
+							<td><input type="text" /></td>
+							<th>核销货物序号</th>
+							<td><input type="text" /></td>
+						</tr>
+						<tr>
+							<th>核销数量</th>
+							<td><input type="text" /></td>
+							<th>许可明细余量</th>
+							<td><input type="text" /></td>
+							<th>核销后余量</th>
+							<td><input type="text" /></td>
+						</tr>
+						<tr>
+							<th>计量单位</th>
+							<td><input type="text" /></td>
+							<td colspan="4"></td>
+						</tr>
+					</table>
+					<div class="decl-btn">
+						<button>添加</button>
+						<button>删除</button>
+						<button>确定</button>
+						<button>取消</button>
+					</div>						
+				</div>
+			</div>
+
+			<!--箱货对应关系-->
+			<div class="usePopup reverse boxCorrespondence">
+				<div class="usePopup-top">
+					<table >
+						<thead>
+							<tr>
+								<th>序号</th>
+								<th>货物序号</th>
+								<th>HS编码</th>
+								<th>集装箱规格</th>
+								<th>集装箱号码</th>
+								<th>操作</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>1</td>
+								<td>11</td>
+								<td>孙杰</td>
+								<td>孙杰</td>
+								<td>孙杰</td>
+								<td><img src="img/delete.gif"/></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="usePopup-bottom">
+					<table class="table" >
+						<tr>
+							<th>商品序号</th>
+							<td><input type="text" /></td>
+							<th>HS编码</th>
+							<td><input type="text" /></td>
+							<th>集装箱号码</th>
+							<td><input type="text" /></td>
+						</tr>
+						<tr>
+							<th>集装箱规格</th>
+							<td><input type="text" /></td>
+							<th>数量</th>
+							<td class="hasinp">
+								<input type="text" />
+								<input type="text" />
+							</td>
+							<th>重量</th>
+							<td class="hasinp">
+								<input type="text" />
+								<input type="text" />
+							</td>
+						</tr>
+						<tr>
+							<th>标准量单位</th>
+							<td><input type="text" /></td>
+							<th>运输工具类型	</th>
+							<td><input type="text" /></td>
+							<td colspan="2"></td>
+						</tr>
+					</table>
+					<div class="decl-btn">
+						<button>添加</button>
+						<button>确定</button>
+						<button>取消</button>
+					</div>						
+				</div>
+			</div>
+
+			<!--备用信息-->
+			<div class="usePopup hasarea spare">
+				<div class="usePopup-top">
+					<table>
+						<tbody>
+							<tr>
+								<th>备用信息1</td>
+								<td><textarea></textarea></td>
+							</tr>
+							<tr>
+								<th>备用信息2</td>
+								<td><textarea></textarea></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="usePopup-bottom">
+					<div class="decl-btn center">
+						<button>确定</button>
+						<button>取消</button>
+					</div>						
+				</div>
+			</div>
+
+			<!--危险货物信息-->
+			<div class="usePopup danger">
+				<div class="usePopup-top">
+					<table class="table" >
+						<tbody>
+							<tr>
+								<th>UN编码</td>
+								<td><input type="text" /></td>
+							</tr>
+							<tr>
+								<th>危险货物名称</td>
+								<td><input type="text" /></td>
+							</tr>
+							<tr>
+								<th>危险类别</td>
+								<td><input type="text" /></td>
+							</tr>
+							<tr>
+								<th>危包规格</td>
+								<td><input type="text" /></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="usePopup-bottom">
+					<div class="decl-btn">
+						<button>确定</button>
+					</div>						
+				</div>
+			</div>	
+
+			<!--货物总信息-->
+			<div class="usePopup goodsValue">
+				<div class="usePopup-top">
+					<table class="table" >
+						<tbody>
+							<tr>
+								<th>货物总值</td>
+								<td><input value="0.00" readonly="readonly" type="text" /></td>
+							</tr>
+							<tr>
+								<th>报检数量</td>
+								<td><input value="0" readonly="readonly" type="text" /></td>
+							</tr>
+							<tr>
+								<th>包装数量</td>
+								<td><input value="0" readonly="readonly" type="text" /></td>
+							</tr>
+							<tr>
+								<th>报检重量</td>
+								<td><input value="0" readonly="readonly" type="text" /></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="usePopup-bottom">
+					<div class="decl-btn">
+						<button>关闭</button>
+					</div>						
+				</div>
+			</div>				
+			
+			<!--集装箱号码-->
+			<div class="usePopup hasarea containerNum">
+				<div class="usePopup-top">
+					<table>
+						<tbody>
+							<tr>
+								<td><textarea></textarea></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="usePopup-bottom">
+					<div class="decl-btn center">
+						<button>确定</button>
+						<button>取消</button>
+					</div>						
+				</div>
+			</div>
+			
+		</div>
+		
+		
+		<ul id="messagelist" style="z-index: 110; width: 292px; max-height: 260px;"></ul>
+		
+		
+		
+	</body>
+	<script type="text/javascript" src="js/jquery-1.12.0.min.js" ></script>
+	<script type="text/javascript" src="js/layer/layer.js" ></script>
+	<script type="text/javascript" src="js/DatePicker/WdatePicker.js" ></script>
+	<script type="text/javascript" src="js/base.js" ></script>
+	
+	<script>
+		$(function () {
+				
+			var arr1 =[
+				{'code':'110000','name':'北京局本部','id':3},
+				{'code':'110009','name':'北京局金伯利办公室','id':4},
+				{'code':'110010','name':'北京局国际展览检验检疫办事处','id':5},
+				{'code':'110030','name':'北京局平谷办事处','id':6},
+				{'code':'110040','name':'北京局天竺综合保税区办事处','id':7},
+				{'code':'110050','name':'北京局中关村办事处','id':8},
+				{'code':'110060','name':'北京局邮件办事处','id':9},
+				{'code':'110070','name':'北京局特种检疫办事处办事处','id':10},
+				{'code':'110100','name':'首都机场局本部','id':11},
+				{'code':'110101','name':'首都机场局快件工作点','id':12},
+				{'code':'110200','name':'北京丰台局本部','id':13},
+				{'code':'110300','name':'北京朝阳局本部','id':14},
+				{'code':'110400','name':'北京经济技术开发区局本部','id':15},
+				{'code':'110401','name':'北京经济技术开发区局B保工作点','id':16},
+				{'code':'110500','name':'北京顺义局本部','id':17},
+				{'code':'110600','name':'北京通州局本部','id':18},
+				{'code':'110700','name':'北京海淀局本部','id':19},
+				{'code':'110800','name':'北京西站局本部','id':20},
+				{'code':'120000','name':'天津局本部','id':21},
+				{'code':'120009','name':'天津局金伯利办公室','id':22}
+			];				
+			myauto($('#seldeclName'),arr1);	
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				$('.enterprise-btn').click(function () {
+					uselayeropen({
+						title: '企业资质信息',
+						obj:$('.enterprise')
+					});
+										
+					
+				});
+				
+				$('.marknum-btn').click(function () {
+					uselayeropen({
+						title: '标记及号码',
+						width:'310px',
+						height:'310px',
+						obj:$('.marknum')
+					});
+					
+				});
+				$('.attached-btn').click(function () {
+					uselayeropen({
+						title: '附页',
+						width:'400px',
+						height:'430px',
+						obj:$('.attached')
+					});
+					
+				});
+				$('.special-btn').click(function () {
+					uselayeropen({
+						title: '特种业务标识',
+						width:'250px',
+						height:'250px',
+						obj:$('.special')
+					});
+					
+				});
+				$('.clearance-btn').click(function () {
+					uselayeropen({
+						title: '特殊通关模式',
+						width:'220px',
+						height:'230px',
+						obj:$('.clearance')
+					});
+					
+				});
+				$('.bill-btn').click(function () {
+					uselayeropen({
+						title: '需要证单',
+						obj:$('.bill')
+					});
+					
+				});
+				
+				$('.requirement-btn').click(function () {
+					uselayeropen({
+						title: '特殊要求',
+						width:'310px',
+						height:'310px',
+						obj:$('.requirement')
+					});
+					
+				});
+				$('.attachNotes-btn').click(function () {
+					uselayeropen({
+						title: '随附单据',
+						obj:$('.attachNotes')
+					});
+					
+				});
+				$('.attachUser-btn').click(function () {
+					uselayeropen({
+						title: '使用人',
+						obj:$('.attachUser')
+					});
+					
+				});
+				$('.cargoAttribute-btn').click(function () {
+					uselayeropen({
+						title: '货物属性',
+						width:'600px',
+						height:'430px',
+						obj:$('.cargoAttribute')
+					});
+					
+				});
+				$('.package-btn').click(function () {
+					uselayeropen({
+						title: '包装数量信息',
+						width:'900px',
+						obj:$('.package')
+					});
+					
+				});
+				$('.license-btn').click(function () {
+					uselayeropen({
+						title: '包装数量信息',
+						obj:$('.license')
+					});
+					
+				});
+				$('.boxCorrespondence-btn').click(function () {
+					uselayeropen({
+						title: '箱货对应关系',
+						width:'900px',
+						obj:$('.boxCorrespondence')
+					});
+					
+				});
+				
+				
+				$('.spare-btn').click(function () {
+					uselayeropen({
+						title: '备用信息',
+						width:'450px',
+						height:'480px',
+						obj:$('.spare')
+					});
+					
+				});
+				$('.danger-btn').click(function () {
+					uselayeropen({
+						title: '危险货物信息',
+						width:'300px',
+						height:'250px',
+						obj:$('.danger')
+					});
+					
+				});
+				$('.goodsValue-btn').click(function () {
+					uselayeropen({
+						title: '货物总信息',
+						width:'300px',
+						height:'250px',
+						obj:$('.goodsValue')
+					});
+					
+				});
+				$('.containerNum-btn').click(function () {
+					uselayeropen({
+						title: '集装箱号码【同步数量】',
+						width:'310px',
+						height:'310px',
+						obj:$('.containerNum')
+					});
+					
+				});
+				
+				
+				
+				
+				
+				var attachedStr = $('.attached ul li.hide').prop('outerHTML');
+				$('.attached-file-btn').click(function () {
+					$('.attached ul li.hide input').click();
+				});
+				$('.attached-file-add').click(function () {
+					if ($('.attached-file-name').val()=='') {
+						uselayer(3,'请先选择文件');
+						return false;
+					}
+					$('.attached ul li.hide span').html($('.attached-file-name').val());
+					$('.attached-file-name').val('');
+					$('.attached ul li.hide').removeClass('hide');
+					$('.attached ul').append(attachedStr);
+					attachedchange();
+				});
+				
+				
+				attachedchange();
+				
+				function attachedchange() {
+					
+					$('.attached ul li.hide input').change(function () {
+						if ($(this).val()!='') {
+							$('.attached-file-name').val($(this).val());
+						} else {
+							$('.attached-file-name').val('');
+						}
+					});					
+					
+				};
+				
+				
+				
+				
+				$('.usedatepicker').each(function () {
+					var _this = $(this);
+					$(this).focus(function () {
+						WdatePicker({el:$(this)[0],dateFmt:'yyyy-MM-dd',onpicked:function () {
+							if ($('.autonext').eq($(_this).index('.autonext')+1).length!=0) {
+								$('.autonext').eq($(_this).index('.autonext')+1).focus();
+							}
+							return false;
+						}});
+						
+					});
+					
+					
+				});
+				
+				$('.tableclick').each(function () {
+					
+					var _this = $(this);
+					$(_this).find('tbody tr').click(function () {
+						console.log($(this))
+						$(_this).find('tbody tr').removeClass('active');
+						$(this).addClass('active');
+					});
+				});
+				
+				
+				
+			
+		});
+		
+		
+		
+	</script>
+	
+</html>

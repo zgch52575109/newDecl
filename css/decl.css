@@ -1,0 +1,168 @@
+.decl { padding: 10px; min-width: 600px;}
+table.table { width: 100%;}
+table.table{border-right:1px solid #dbdee1;border-bottom:1px solid #dbdee1} 
+table.table td,table.table th{border-left:1px solid #dbdee1;border-top:1px solid #dbdee1} 
+.table { width: 100%;}			
+.table tbody th {
+    height: 23px;
+    width: 8%;
+    min-width: 100px;
+    font-weight: normal;
+    font-size: 12px;
+    padding-right: 5px;
+    text-align: right;
+}
+.table td { width: 17%;font-size: 12px; position: relative; }
+.table th i { color: #d81e06;}
+.table td input[type=text] { display: block; text-indent: 0.5em; border: none; height: 22px; line-height: 22px; width: 100%; font-size: 12px;}		
+.table td input.valid { background-color: #d6fbd6;}
+
+.table td input[readonly=readonly] {
+    background-color: #f2f2f2;
+}
+
+.table .arrow  { position: absolute; top: 3px; right: 3px; width: 16px; height: 16px; background: url(../img/combo_arrow.png) no-repeat;}
+
+
+.dashedbar {
+    width: 99%;
+    height: 14px;
+    margin-bottom: 12px;
+    position: relative;
+    text-align: center;
+    border-bottom: 1px dashed #fff;
+    color: #0d79d6;
+    border-color: #0d79d6;
+}
+.dashedbar span {
+    position: relative;
+    top: 3px;
+    padding: 0 20px;
+    margin: 0 auto;
+    background-color: #fff;
+}	
+
+
+.hasbtn { position: relative;}
+.hasbtn div { padding-right: 50px; overflow: hidden;}
+
+.hasbtn p { position: absolute; top: 0; right: 0px;}
+.hasbtn p button,.hasbtn p span { float: left; margin: 0 5px; width: 40px; text-align: center; height: 22px; line-height: 22px; border: none; color: #fff; font-size: 12px; background: #53a4ea;}
+.hasbtn p span { background: none; color: #000;}
+
+.table td.hasinp input { width: 50%; float: left; border-right: 1px solid #ccc;}
+.table td.hasinp input:last-child { border-right: none;}
+/*.table td.hasinp i { float: left; height: 100%; width: 0px; border: 1px solid #ccc;}*/
+
+.hasbtn.hasbtn2 div { padding-right: 100px;}
+.hasbtn.hasbtn3 div { padding-right: 150px;}
+.hasbtn.hasbtn4 div { padding-right: 200px;}
+.hasbtn.hasbtn5 div { padding-right: 250px;}
+
+.hasbtn.hasbtnlg p { width: 100%;}
+.hasbtn.hasbtnlg p button { width: 20%; margin: 0 2.5%;}
+
+.decl-btn { text-align: right; margin: 20px;}
+.decl-btn button { margin: 0 5px; padding: 0 10px; text-align: center; height: 22px; line-height: 22px; border: none; color: #fff; font-size: 12px; background: #53a4ea;}
+
+.goods table {table-layout: fixed;  width: 100%; white-space: nowrap; margin-top: 20px;}
+.goods table th,.goods table td { height: 24px; overflow: hidden ;  text-overflow: ellipsis;word-break: break-all; word-wrap:break-word; font-weight: normal; font-size: 12px; text-align: center; width: 11%; }
+.goods table { }
+
+table.table tbody tr.active { background: #eee;}
+
+button.button { margin: 0 5px; padding: 0 10px; text-align: center; height: 22px; line-height: 22px; border: none; color: #fff; font-size: 12px; background: #53a4ea; }
+.center { text-align: center;}
+.clear { clear: both;}
+.hide { display: none;}
+
+/*弹窗公共方法,默认上半部可以滚动，下半部固定*/
+.usePopup { display: none; padding: 20px; padding-bottom: 70px; height: 100%; overflow: hidden; position: relative;}
+.usePopup .usePopup-top { height: 100%; overflow-x: hidden; overflow-y: auto;}
+.usePopup .usePopup-top table { width: 100%; text-align: center; }
+.usePopup .usePopup-top table th,.usePopup .usePopup-top table td { height: 24px; overflow: hidden ;  text-overflow: ellipsis;word-break: break-all; word-wrap:break-word; font-weight: normal; font-size: 12px; text-align: center; }
+.usePopup .usePopup-top table td,.usePopup .usePopup-top table th { min-width: 100px;}
+.usePopup .usePopup-bottom { height: 60px; width: 100%; position: absolute; padding: 0 20px; left: 0; bottom: 10px; } 
+/*固定上半部，下半部可以滚动*/
+.usePopup.reverse {padding-top: 150px; padding-bottom: 10px; }
+.usePopup.reverse .usePopup-bottom{ height: 130px; bottom: auto; top: 10px;}
+/*有文本域输入的情况*/
+.hasarea .usePopup-top table { border: none;}
+.hasarea .usePopup-top table tbody th { border: none; vertical-align: top; line-height: 2; font-weight: normal;}
+.hasarea .usePopup-top table textarea { font-size:12px ;margin-bottom: 20px;  display: block; padding: 0.5em; width: 100%; height: 150px; resize: none;}
+.hasarea .usePopup-top table tbody td { border: none; }
+
+
+/*企业资质弹窗*/
+.enterprise.reverse {padding-top: 130px; padding-bottom: 10px; }
+.enterprise.reverse .usePopup-bottom{ height: 110px; bottom: auto; top: 10px;}
+
+
+/*附页*/
+.attached { padding: 20px; display: none;}
+.attached input { width: 220px; height: 22px; font-size: 12px;}
+.attached div { overflow: hidden; padding-top: 20px;}
+.attached ul { float: left; margin-left: 20px; width: 245px; height: 200px; border: 1px solid #ccc; }
+.attached p { float: left; width: 95px; height: 200px; padding:  20px;}
+.attached p button { margin: 25px 5px;}
+
+/*特种业务标识*//*特殊通关模式*/
+.special,.clearance { padding: 20px; display: none;}
+.special li,.clearance li { font-size: 12px; padding-left: 60px; margin: 8px 0;}
+
+/*需要证单*/
+.bill .table td input[type=text] { text-align: center; text-indent: 0;}
+/*随附单据*/
+.attachNotes { padding-bottom: 200px;}
+.attachNotes .usePopup-bottom { height: 170px;}
+/*使用人*/
+.attachUser { padding-bottom: 140px;}
+.attachUser .usePopup-bottom { height: 110px;}
+
+
+
+
+
+
+#messagelist, #ciqbox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    background: #fff;
+    /*height: 200px;*/
+    display: none;
+    border: 1px solid #e0e0e0;
+    overflow: hidden;
+    width: auto;
+    display: none;
+}
+#messagelist, #ciqlist {
+    overflow-y: auto;
+    /* height: 200px; */
+    overflow-x: hidden;
+}			
+#messagelist li, #ciqlist li {
+    width: auto;
+    height: 24px;
+    line-height: 24px;
+    font-size: 12px;
+    border: 1px solid #fff;
+}
+#messagelist span, #ciqlist span {
+    font-size: 12px;
+    float: left;
+}
+#messagelist .codespan, #ciqlist .codespan {
+    padding: 0px 10px 0px 2px;
+}
+#messagelist strong, #ciqbox strong {
+    color: red;
+}
+#messagelist .active, #ciqlist .active {
+    background: -webkit-linear-gradient(#fdfdf7, #bce9fe);
+    background: -o-linear-gradient(#fdfdf7, #bce9fe);
+    background: -moz-linear-gradient(#fdfdf7, #bce9fe);
+    background: linear-gradient(#fdfdf7, #bce9fe);
+    border: 1px solid #b9d5f5;
+}

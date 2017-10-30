@@ -1,0 +1,108 @@
+.decl { padding: 10px; min-width: 600px;}
+table { width: 100%;}
+.table { border: 1px solid #dbdee1; width: 100%; white-space: nowrap;}			
+.table th {
+    height: 23px;
+    width: 8%;
+    font-weight: normal;
+    font-size: 12px;
+    padding-right: 5px;
+    text-align: right;
+}
+.table td { width: 17%;font-size: 12px;}
+.table th i { color: #d81e06;}
+.table td input[type=text] { display: block; text-indent: 0.5em; border: none; height: 22px; line-height: 22px; width: 100%; font-size: 12px;}		
+.table td input.valid { background: #d6fbd6;}
+
+.table td input[readonly=readonly] {
+    background-color: #f2f2f2;
+}
+.dashedbar {
+    width: 99%;
+    height: 14px;
+    margin-bottom: 12px;
+    position: relative;
+    text-align: center;
+    border-bottom: 1px dashed #fff;
+    color: #0d79d6;
+    border-color: #0d79d6;
+}
+.dashedbar span {
+    position: relative;
+    top: 3px;
+    padding: 0 20px;
+    margin: 0 auto;
+    background-color: #fff;
+}	
+
+
+.hasbtn { position: relative;}
+.hasbtn div { padding-right: 50px; overflow: hidden;}
+
+.hasbtn p { position: absolute; top: 0; right: 0px;}
+.hasbtn p button,.hasbtn p span { float: left; margin: 0 5px; width: 40px; text-align: center; height: 22px; line-height: 22px; border: none; color: #fff; font-size: 12px; background: #53a4ea;}
+.hasbtn p span { background: none; color: #000;}
+
+.table td.hasinp input { width: 49%; float: left; border-right: 1px solid #ccc;}
+.table td.hasinp input:last-child { border-right: none;}
+/*.table td.hasinp i { float: left; height: 100%; width: 0px; border: 1px solid #ccc;}*/
+
+.hasbtn.hasbtn2 div { padding-right: 100px;}
+.hasbtn.hasbtn3 div { padding-right: 150px;}
+.hasbtn.hasbtn4 div { padding-right: 200px;}
+.hasbtn.hasbtn5 div { padding-right: 250px;}
+
+.hasbtn.hasbtnlg p { width: 100%;}
+.hasbtn.hasbtnlg p button { width: 20%; margin: 0 2.5%;}
+
+.decl-btn { text-align: right; margin: 20px;}
+.decl-btn button { margin: 0 5px; padding: 0 10px; text-align: center; height: 22px; line-height: 22px; border: none; color: #fff; font-size: 12px; background: #53a4ea;}
+
+.goods table {table-layout: fixed; border: 1px solid #dbdee1; width: 100%; white-space: nowrap; margin-top: 20px;}
+.goods table th,.goods table td { height: 24px; overflow: hidden ;  text-overflow: ellipsis;word-break: break-all; word-wrap:break-word; font-weight: normal; font-size: 12px; text-align: center; width: 11%; }
+.goods table { }
+
+table tbody tr.active { background: #eee;}
+
+button.button { margin: 0 5px; padding: 0 10px; text-align: center; height: 22px; line-height: 22px; border: none; color: #fff; font-size: 12px; background: #53a4ea; }
+.center { text-align: center;}
+.clear { clear: both;}
+.hide { display: none;}
+
+
+/*企业资质弹窗*/
+.enterprise { padding: 20px; display: none;}
+.enterprise-list { border: 1px solid #dbdee1; width: 100%; white-space: nowrap;}
+.enterprise-list th,.enterprise-list td { height: 24px; overflow: hidden ;  text-overflow: ellipsis;word-break: break-all; word-wrap:break-word; font-weight: normal; font-size: 12px; text-align: center; }
+
+
+/*标记及号码*/
+.marknum { padding: 20px; display: none;}
+.marknum textarea { height: 200px; width: 99%; resize: none;}
+
+.attached { padding: 20px; display: none;}
+.attached input { width: 200px; height: 18px; font-size: 12px;}
+.attached div { overflow: hidden; padding-top: 20px;}
+.attached ul { float: left; margin-left: 20px; width: 235px; height: 200px; border: 1px solid #ccc; }
+.attached p { float: left; width: 60px; height: 200px; padding:  20px; padding-right: 0; padding-bottom: 0;}
+.attached p button { margin: 25px 5px;}
+.attached .decl-btn { padding: 0;}
+
+/*特种业务标识*//*特殊通关模式*/
+.special,.clearance { padding: 20px; display: none;}
+.special li,.clearance li { font-size: 12px; padding-left: 60px; margin: 8px 0;}
+/*.clearance li { padding-left: 70px;}*/
+
+/*所需单据*/
+.bill { padding: 20px; padding-bottom:80px; position: relative; display: none; height: 100%;}
+.bill-list { border: 1px solid #dbdee1; width: 100%; white-space: nowrap;}
+.bill-list th,.bill-list td { width: 20%; text-align: center;}
+.bill-list td input[type=text] { width: 100%; text-align: center; border: none;}
+.bill-table {height: 100%;overflow-x: hidden; overflow-y: auto;}
+.bill .decl-btn { position: absolute; width: 88%; bottom: 10px;} 
+
+
+
+
+
+
