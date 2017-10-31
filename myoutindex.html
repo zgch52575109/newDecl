@@ -31,14 +31,14 @@
 						
 						<th><i>*</i>报检类别</th>
 						<td>
-							<input  idField="idValue" textField="textValue" url="js/data/decl_type.json" onfocus="initByFocus($(this))" id="seldeclName" class="valid autonext" type="text">
+							<input  id="seldeclName" class="valid autonext" type="text">
 						</td>
 						
 					</tr>
 					<tr>
 						
 						<th><i>*</i>报检登记号</th>
-						<td><input class="valid autonext" type="text"></td>
+						<td><input id="aaa" class="valid autonext" type="text"></td>
 						
 						<th><i>*</i>单位名称</th>
 						<td><input class="valid" type="text"></td>
@@ -1179,6 +1179,25 @@
 	<script>
 		$(function () {
 				
+				$('#seldeclName').myCombo({
+					idField:'idValue',
+					textField:'textValue',
+					url:'js/data/decl_type.json',
+					width:'100px',
+					height:'200px',
+					beforeInit:function () {
+						uselayer(3,'走接口之前');
+					},
+					afterSelect:function () {
+						uselayer(31,'选中之后回调');
+					},
+					formater:'formater'
+				});
+				$('#aaa').myCombo({
+					idField:'idValue',
+					textField:'textValue',
+					url:'js/data/decl_type.json'
+				});
 				
 				$('.autonext').focus(function () {
 					$('#promptMessage').html($(this).attr('tip'));

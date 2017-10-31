@@ -104,7 +104,26 @@
 		
 	
 	
-	w.special_keys = {
+
+	
+	
+	
+	
+	
+	
+})(window)
+
+$.fn.myCombo = function (options) {
+
+	if (!options.idField||!options.textField||!options.url) {
+		uselayer(1,'myCombo参数配置错误！！！');
+		return false;
+	}
+	options.width = options.width||'auto';
+	options.height = options.height||'auto';
+	
+	var obj = this;
+	var special_keys = {
 		27: "esc",
 		9: "tab",
 //		32: "space",
@@ -137,23 +156,24 @@
 		122: "f11",
 		123: "f12"
 	};
-	
-	
-w.initByFocus = function (obj) {
-		
+
+	$(this).focus(function () {
+		options.beforeInit&&options.beforeInit();
 		Api.ajax({
-			url:$(obj).attr('url'),
+			url:options.url,
 			fn:function (res) {
-				console.log(res)
+				console.log(res);
+				
+				$('#messagelist').css({'width':options.width,'height':options.height});
+				
 				if ($(obj).offset().left+$('#messagelist').width()>$(document).width()) {
-					
 					$('#messagelist').css({'left':'auto','right':$(document).width()-4-$(obj).offset().left-$(obj).width()+'px','top':$(obj).height()+$(obj).offset().top+'px'});
 				} else {
 					$('#messagelist').css({'left':'auto','left':$(obj).offset().left+'px','top':$(obj).height()+$(obj).offset().top+'px'});
 				}
 				var arr = [];
 				for (var i = 0 ; i <res.length;i++) {
-					arr.push({'code':res[i][$(obj).attr('idField')],'name':res[i][$(obj).attr('textField')]});
+					arr.push({'code':res[i][options.idField],'name':res[i][options.textField]});
 				}
 				writelist(obj,arr);
 		
@@ -202,7 +222,6 @@ w.initByFocus = function (obj) {
 					}
 					mysel(obj,arr);
 				});
-				
 				$('#messagelist').css('display','block');
 				$(obj).off('blur');
 				$(obj).on('blur',function () {
@@ -210,16 +229,9 @@ w.initByFocus = function (obj) {
 				});
 			}
 		});
+		
+	});
 
-
-
-	
-	
-	};
-			
-
-	
-	
 	function mysel(obj,arr) {
 		var val = $.trim($(obj).val());
 		val = val.replace('(','').replace(')','');
@@ -248,7 +260,7 @@ w.initByFocus = function (obj) {
 		}
 		var str = '';
 		for (var i = 0 ; i < arr.length; i++) {
-			str+='<li><span class="codespan">'+arr[i].code+'</span><span class="namespan">'+arr[i].name+'</span></li>';
+			str+='<li title="'+arr[i].name+'"><span class="codespan">'+arr[i].code+'</span><span class="namespan">'+arr[i].name+'</span></li>';
 			
 		}
 		$('#messagelist').html(str);
@@ -281,6 +293,7 @@ w.initByFocus = function (obj) {
 			_namestr = _namestr.replace(/<strong>|<\/strong>/gi,'');
 			$(obj).val(_namestr+'('+_codestr+')');
 		}
+		options.afterSelect&&options.afterSelect();
 		hideauto(obj);
 		nextauto(obj);
 		return false;					
@@ -302,21 +315,9 @@ w.initByFocus = function (obj) {
 			$('.autonext').eq($(obj).index('.autonext')-1).focus();
 		}
 	};
-	
-	
 
-			
 	
-	
-	
-	
-	
-	
-	
-	
-	
-})(window)
-
+};
 
 
 

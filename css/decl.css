@@ -132,11 +132,11 @@ button.button { margin: 0 5px; padding: 0 10px; text-align: center; height: 22px
     left: 0;
     z-index: 9;
     background: #fff;
-    /*height: 200px;*/
     display: none;
     border: 1px solid #e0e0e0;
     overflow: hidden;
     width: auto;
+    height: auto;
     display: none;
 }
 #messagelist, #ciqlist {
@@ -150,10 +150,14 @@ button.button { margin: 0 5px; padding: 0 10px; text-align: center; height: 22px
     line-height: 24px;
     font-size: 12px;
     border: 1px solid #fff;
+	overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;    
+    padding-right: 5px;
 }
 #messagelist span, #ciqlist span {
     font-size: 12px;
-    float: left;
+    
 }
 #messagelist .codespan, #ciqlist .codespan {
     padding: 0px 10px 0px 2px;
