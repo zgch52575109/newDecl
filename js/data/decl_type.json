@@ -1,5 +1,5 @@
 {"success":true,"msg":"查询成功","data":[
-	{"idValue":"13","textValue":"(13)入境检验检疫"},
-	{"idValue":"14","textValue":"(14)入境流向"},
-	{"idValue":"15","textValue":"(15)入境验证"}
+	{"idValue":"13","textValue":"入境检验检疫"},
+	{"idValue":"14","textValue":"入境流向"},
+	{"idValue":"15","textValue":"入境验证"}
 ]}

@@ -5,9 +5,9 @@
 		<title>出境申报</title>
 		<link rel="stylesheet" type="text/css" href="css/myreset.css"/>
 		<link rel="stylesheet" href="css/decl.css" />
-		<style>
+		<link rel="stylesheet" href="js/easyui1.4.2/themes/default/easyui.css" />
+ 
 
-		</style>
 	</head>
 	<body>
 		
@@ -21,7 +21,7 @@
 				<tbody>
 					<tr>
 						<th><i>*</i>录入序号</th>
-						<td><input class="valid autonext" tip="啦啦啦这个必填" type="text"></td>
+						<td><input class="easyui-validatebox autonext" tip="请输入录入序号" type="text"  data-options="required:true,validType:'CHS'"></td>
 						
 						<th>报检号</th>
 						<td><input type="text" readonly="readonly"></td>
@@ -41,7 +41,7 @@
 						<td><input id="aaa" class="valid autonext" type="text"></td>
 						
 						<th><i>*</i>单位名称</th>
-						<td><input class="valid" type="text"></td>
+						<td><input class="valid autonext"  type="text"></td>
 						
 						<th>企业资质</th>
 						<td colspan="3" class="hasbtn">
@@ -56,45 +56,45 @@
 					</tr>
 					<tr>
 						<th><i>*</i>报检员编码</th>
-						<td><input class="valid" type="text"></td>
+						<td><input class="valid autonext" type="text"></td>
 						
 						<th><i>*</i>报检员姓名</th>
-						<td><input class="valid" type="text"></td>
+						<td><input class="valid autonext" type="text"></td>
 						
 						<th><i>*</i>联系人</th>
-						<td><input class="valid" type="text"></td>
+						<td><input class="valid autonext" type="text"></td>
 						
 						<th><i>*</i>联系电话</th>
-						<td><input class="valid" type="text"></td>
+						<td><input class="valid autonext" type="text"></td>
 						
 					</tr>
 					
 					<tr>
 						<th><i>*</i>发货人代码</th>
-						<td><input class="valid" type="text"></td>
+						<td><input class="valid autonext" type="text"></td>
 						
 						<th><i>*</i>发货人中文</th>
-						<td><input class="valid" type="text"></td>
+						<td><input class="valid autonext" type="text"></td>
 						
 						<th>发货人英文</th>
-						<td><input type="text"></td>
+						<td><input type="text autonext"></td>
 						
 						<th>发货人地址</th>
-						<td><input type="text"></td>
+						<td><input type="text autonext"></td>
 						
 					</tr>
 					<tr>
 						<th>收货人代码</th>
-						<td><input type="text"></td>
+						<td><input type="text autonext"></td>
 						
 						<th>收货人中文</th>
-						<td><input type="text"></td>
+						<td><input type="text autonext"></td>
 						
 						<th>收货人英文</th>
-						<td><input type="text"></td>
+						<td><input type="text autonext"></td>
 						
 						<th>收货人地址</th>
-						<td><input type="text"></td>
+						<td><input type="text autonext"></td>
 						
 					</tr>
 					
@@ -1173,6 +1173,9 @@
 		
 	</body>
 	<script type="text/javascript" src="js/jquery-1.12.0.min.js" ></script>
+	<script type="text/javascript" src="js/easyui1.4.2/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="js/easyui1.4.2/jquery.easyui.validate.ext.js" charset="utf-8"></script>
+	<script type="text/javascript" src="js/easyui1.4.2/locale/easyui-lang-zh_CN.js" charset="utf-8"></script>
 	<script type="text/javascript" src="js/layer/layer.js" ></script>
 	<script type="text/javascript" src="js/DatePicker/WdatePicker.js" ></script>
 	<script type="text/javascript" src="js/base.js" ></script>
@@ -1187,12 +1190,11 @@
 					width:'200px',
 					height:'200px',
 					beforeInit:function () {
-						uselayer(3,'走接口之前');
+						//uselayer(3,'走接口之前');
 					},
 					afterSelect:function () {
-						uselayer(31,'选中之后回调');
-					},
-					formater:'formater'
+						//uselayer(31,'选中之后回调');
+					}
 				});
 				$('#aaa').myCombo({
 					idField:'idValue',
