@@ -1,6 +1,54 @@
 
 
 (function (w) {
+
+	w.Api = {
+		_api:{},
+		ajax:function (options,url,type,e) {
+			options.json=options.json||{};
+			if (Api._api[url]) {
+				return false;
+			}
+			Api._api[url] = true;
+			layer.close(Api.shade);		
+			Api.shade = layer.load(0, {
+				shade: [0.3,'#fff'] //0.1透明度的白色背景
+			});
+			$.ajax({
+				type:options.type?options.type:'get',
+				url:options.url,
+				data:options.json,
+				success:function (res) {
+					layer.close(Api.shade);		
+					Api._api[url] = false;
+					console.log(res);
+					if (res.success) {
+						options.fn&&options.fn(res.data);
+					} else {
+						uselayer(1,res.msg);
+					}
+				},
+				error:function (json) {
+					layer.close(Api.shade);			
+					Api._api[url] = false;		
+					console.log(json);
+					if (json.status==401) {
+						alert("登录失效， 请重新登录。");
+					} else if (json.status==500) {
+						alert("服务器内部错误，请稍后再试。");		
+					} else {
+						var _txt = eval('('+json.responseText+')');
+						alert(_txt.error);
+					}				
+				}
+			});						
+		},
+			
+		aaa:'123'
+		
+	};
+	
+	
 	//公用弹窗方法
 	w.uselayer = function (type,str,fn,fn2) {
 		var layerindex = null;
@@ -92,91 +140,79 @@
 	
 	
 w.initByFocus = function (obj) {
-			var arr =[
-				{'code':'110000','name':'北京局本部','id':3},
-				{'code':'110009','name':'北京局金伯利办公室','id':4},
-				{'code':'110010','name':'北京局国际展览检验检疫办事处','id':5},
-				{'code':'110030','name':'北京局平谷办事处','id':6},
-				{'code':'110040','name':'北京局天竺综合保税区办事处','id':7},
-				{'code':'110050','name':'北京局中关村办事处','id':8},
-				{'code':'110060','name':'北京局邮件办事处','id':9},
-				{'code':'110070','name':'北京局特种检疫办事处办事处','id':10},
-				{'code':'110100','name':'首都机场局本部','id':11},
-				{'code':'110101','name':'首都机场局快件工作点','id':12},
-				{'code':'110200','name':'北京丰台局本部','id':13},
-				{'code':'110300','name':'北京朝阳局本部','id':14},
-				{'code':'110400','name':'北京经济技术开发区局本部','id':15},
-				{'code':'110401','name':'北京经济技术开发区局B保工作点','id':16},
-				{'code':'110500','name':'北京顺义局本部','id':17},
-				{'code':'110600','name':'北京通州局本部','id':18},
-				{'code':'110700','name':'北京海淀局本部','id':19},
-				{'code':'110800','name':'北京西站局本部','id':20},
-				{'code':'120000','name':'天津局本部','id':21},
-				{'code':'120009','name':'天津局金伯利办公室','id':22}
-			];
-
-
-
-		if ($(obj).offset().left+$('#messagelist').width()>$(document).width()) {
-			
-			$('#messagelist').css({'left':'auto','right':$(document).width()-4-$(obj).offset().left-$(obj).width()+'px','top':$(obj).height()+$(obj).offset().top+'px'});
-		} else {
-			$('#messagelist').css({'left':'auto','left':$(obj).offset().left+'px','top':$(obj).height()+$(obj).offset().top+'px'});
-		}
-		writelist(obj,arr);
-
-		$(obj).off('keydown');
 		
+		Api.ajax({
+			url:$(obj).attr('url'),
+			fn:function (res) {
+				console.log(res)
+				if ($(obj).offset().left+$('#messagelist').width()>$(document).width()) {
+					
+					$('#messagelist').css({'left':'auto','right':$(document).width()-4-$(obj).offset().left-$(obj).width()+'px','top':$(obj).height()+$(obj).offset().top+'px'});
+				} else {
+					$('#messagelist').css({'left':'auto','left':$(obj).offset().left+'px','top':$(obj).height()+$(obj).offset().top+'px'});
+				}
+				var arr = [];
+				for (var i = 0 ; i <res.length;i++) {
+					arr.push({'code':res[i][$(obj).attr('idField')],'name':res[i][$(obj).attr('textField')]});
+				}
+				writelist(obj,arr);
 		
-		$(obj).on('keydown',function (e) {
-			var num = $('#messagelist').attr('num');
-			if (e.keyCode==38||e.keyCode==40) {
-				if (e.keyCode==38) {
-					num--;
-					if (num<0) {
-						num=0;
-					}
-				}
-				if (e.keyCode==40) {
-					num++;
-					if (num>=$('#messagelist li').length) {
-						num=$('#messagelist li').length-1;
-					}
-				}
-				$('#messagelist li').removeClass('active');
-				$('#messagelist').attr('num',num);
-				$('#messagelist li').eq(num).addClass('active');
-				if (num<10) {
-					$('#messagelist').scrollTop(0);
-				} else if (num>=10) {
-					$('#messagelist').scrollTop((num-9)*26);
-				}
+				$(obj).off('keydown');
 				
-			}
-			if (e.keyCode==13||e.keyCode==9) {
-				clicknext(obj);
-				return false;
-			}
-			if (e.keyCode==27) {
+				$(obj).on('keydown',function (e) {
+					var num = $('#messagelist').attr('num');
+					if (e.keyCode==38||e.keyCode==40) {
+						if (e.keyCode==38) {
+							num--;
+							if (num<0) {
+								num=0;
+							}
+						}
+						if (e.keyCode==40) {
+							num++;
+							if (num>=$('#messagelist li').length) {
+								num=$('#messagelist li').length-1;
+							}
+						}
+						$('#messagelist li').removeClass('active');
+						$('#messagelist').attr('num',num);
+						$('#messagelist li').eq(num).addClass('active');
+						if (num<10) {
+							$('#messagelist').scrollTop(0);
+						} else if (num>=10) {
+							$('#messagelist').scrollTop((num-9)*26);
+						}
+						
+					}
+					if (e.keyCode==13||e.keyCode==9) {
+						clicknext(obj);
+						return false;
+					}
+					if (e.keyCode==27) {
+						$(obj).off('blur');
+						hideauto(obj);
+						prevauto(obj);
+						return false;
+					}
+				});
+				$(obj).off('keyup');
+				$(obj).on('keyup',function (e) {
+					if (special_keys[e.keyCode]) {
+						return false;
+					}
+					mysel(obj,arr);
+				});
+				
+				$('#messagelist').css('display','block');
 				$(obj).off('blur');
-				hideauto(obj);
-				prevauto(obj);
-				return false;
+				$(obj).on('blur',function () {
+					hideauto(obj);
+				});
 			}
 		});
-		$(obj).off('keyup');
-		$(obj).on('keyup',function (e) {
-			if (special_keys[e.keyCode]) {
-				return false;
-			}
-			mysel(obj,arr);
-		});
-		
-		$('#messagelist').css('display','block');
-		$(obj).off('blur');
-		$(obj).on('blur',function () {
-			hideauto(obj);
-		});
+
+
+
 	
 	
 	};
@@ -192,19 +228,17 @@ w.initByFocus = function (obj) {
 			return false;	
 		} 
 		var _arr = [];
-		
 		for (var i = 0 ; i < arr.length; i++ ) {
 			if (arr[i].code.search(val)!=-1) {
-				
-				_arr.push({'id':arr[i].id,'code':arr[i].code.replace(val,'<strong>'+val+'</strong>'),'name':arr[i].name});
+				_arr.push({'code':arr[i].code.replace(val,'<strong>'+val+'</strong>'),'name':arr[i].name});
+				continue;
 			}
 			if (arr[i].name.search(val)!=-1) {
-				
-				_arr.push({'id':arr[i].id,'name':arr[i].name.replace(val,'<strong>'+val+'</strong>'),'code':arr[i].code});
+				_arr.push({'name':arr[i].name.replace(val,'<strong>'+val+'</strong>'),'code':arr[i].code});
+				continue;
 			}
 		}					
 		writelist(obj,_arr);
-		
 	};
 	
 	function writelist(obj,arr) {
