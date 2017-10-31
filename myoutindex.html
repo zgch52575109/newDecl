@@ -12,32 +12,33 @@
 	<body>
 		
 		<div class="decl">
-			
+			<div class="top-info">
+				<p id="promptMessage">*为必填项目</p>
+			</div>			
 			<div class="dashedbar"><span>基本信息</span></div>		
 		
 			<table class="table" >
 				<tbody>
 					<tr>
 						<th><i>*</i>录入序号</th>
-						<td><input class="valid" type="text"></td>
+						<td><input class="valid autonext" tip="啦啦啦这个必填" type="text"></td>
 						
 						<th>报检号</th>
 						<td><input type="text" readonly="readonly"></td>
 						
 						<th>报检日期</th>
-						<td><input class="usedatepicker" type="text"></td>
+						<td><input class="autonext usedatepicker" type="text"></td>
 						
 						<th><i>*</i>报检类别</th>
 						<td>
-							<input id="seldeclName" class="valid" type="text">
-							<em class="arrow"></em>
+							<input onfocus="initByFocus($(this))" id="seldeclName" class="valid autonext" type="text">
 						</td>
 						
 					</tr>
 					<tr>
 						
 						<th><i>*</i>报检登记号</th>
-						<td><input class="valid" type="text"></td>
+						<td><input class="valid autonext" type="text"></td>
 						
 						<th><i>*</i>单位名称</th>
 						<td><input class="valid" type="text"></td>
@@ -1178,29 +1179,37 @@
 	<script>
 		$(function () {
 				
-			var arr1 =[
-				{'code':'110000','name':'北京局本部','id':3},
-				{'code':'110009','name':'北京局金伯利办公室','id':4},
-				{'code':'110010','name':'北京局国际展览检验检疫办事处','id':5},
-				{'code':'110030','name':'北京局平谷办事处','id':6},
-				{'code':'110040','name':'北京局天竺综合保税区办事处','id':7},
-				{'code':'110050','name':'北京局中关村办事处','id':8},
-				{'code':'110060','name':'北京局邮件办事处','id':9},
-				{'code':'110070','name':'北京局特种检疫办事处办事处','id':10},
-				{'code':'110100','name':'首都机场局本部','id':11},
-				{'code':'110101','name':'首都机场局快件工作点','id':12},
-				{'code':'110200','name':'北京丰台局本部','id':13},
-				{'code':'110300','name':'北京朝阳局本部','id':14},
-				{'code':'110400','name':'北京经济技术开发区局本部','id':15},
-				{'code':'110401','name':'北京经济技术开发区局B保工作点','id':16},
-				{'code':'110500','name':'北京顺义局本部','id':17},
-				{'code':'110600','name':'北京通州局本部','id':18},
-				{'code':'110700','name':'北京海淀局本部','id':19},
-				{'code':'110800','name':'北京西站局本部','id':20},
-				{'code':'120000','name':'天津局本部','id':21},
-				{'code':'120009','name':'天津局金伯利办公室','id':22}
-			];				
-			myauto($('#seldeclName'),arr1);	
+				
+				$('.autonext').focus(function () {
+					$('#promptMessage').html($(this).attr('tip'));
+				});
+				$('.autonext').blur(function () {
+					$('#promptMessage').html('*为必填项');
+					if ($(this).hasClass('valid')) {
+						if ($.trim($(this).val())=='') {
+							$(this).addClass('decl-error');
+						} else {
+							$(this).removeClass('decl-error');
+						}						
+					}
+				});
+				$('.autonext').keydown(function (e) {
+					if (e.keyCode==9||e.keyCode==13) {
+						if ($('.autonext').eq($(this).index('.autonext')+1).length!=0) {
+							$('.autonext').eq($(this).index('.autonext')+1).focus();
+						}
+						return false;
+					}
+					if (e.keyCode==27) {
+						if ($(this).index('.autonext')-1>=0) {
+							$('.autonext').eq($(this).index('.autonext')-1).focus();
+						}						
+					}
+					
+					
+				});				
+								
+			
 				
 				
 				

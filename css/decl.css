@@ -1,4 +1,4 @@
-.decl { padding: 10px; min-width: 600px;}
+.decl { padding: 10px; padding-top: 60px; min-width: 600px;}
 table.table { width: 100%;}
 table.table{border-right:1px solid #dbdee1;border-bottom:1px solid #dbdee1} 
 table.table td,table.table th{border-left:1px solid #dbdee1;border-top:1px solid #dbdee1} 
@@ -120,8 +120,10 @@ button.button { margin: 0 5px; padding: 0 10px; text-align: center; height: 22px
 .attachUser .usePopup-bottom { height: 110px;}
 
 
+.top-info { position: fixed; color: red; padding: 20px; z-index: 99; top: 0; left: 0; text-align: center; background: #fff; width: 100%;}
+.no-data { font-size: 12px; text-align: center; line-height: 52px;}
 
-
+.decl-error {border: 1px solid red!important;outline: none;}
 
 
 #messagelist, #ciqbox {
@@ -166,3 +168,7 @@ button.button { margin: 0 5px; padding: 0 10px; text-align: center; height: 22px
     background: linear-gradient(#fdfdf7, #bce9fe);
     border: 1px solid #b9d5f5;
 }
+
+
+
+
