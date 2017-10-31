@@ -44,18 +44,12 @@
 						<td><input class="valid" type="text"></td>
 						
 						<th>企业资质</th>
-						<td colspan="3" class="hasbtn hasbtn5 hasinp">
+						<td colspan="3" class="hasbtn">
 							<div class="qyzz-inp">
 								<input type="text" readonly="readonly" />
-								<i></i>
-								<input type="text" readonly="readonly" />
 							</div>
-							<p class="qyzz-btn">
+							<p>
 								<button class="enterprise-btn">选择</button>
-								<button><<</button>
-								<button>>></button>
-								<button>删除</button>
-								<span>0/0</span>
 							</p>
 						</td>
 						
@@ -232,15 +226,12 @@
 					
 					<tr>
 						<th><i>*</i>随附单据</th>
-						<td colspan="4" class="hasbtn hasbtn4">
+						<td colspan="4" class="hasbtn">
 							<div>
 								<input class="valid" type="text">
 							</div>
 							<p>
 								<button class="attachNotes-btn">选择</button>
-								<button><<</button>
-								<button>>></button>
-								<button>删除</button>
 							</p>
 						</td>
 						<td colspan="3" class="hasbtn hasbtn2 hasinp">
@@ -389,7 +380,7 @@
 					</tr>
 					<tr>
 						<th>产品资质</th>
-						<td colspan="3" class="hasbtn hasbtn5 hasinp">
+						<td colspan="3" class="hasbtn hasinp">
 							<div>
 								<input readonly="readonly" type="text" />
 								<i></i>
@@ -397,10 +388,7 @@
 							</div>
 							<p>
 								<button class="license-btn">选择</button>
-								<button><<</button>
-								<button>>></button>
-								<button>删除</button>
-								<span>0/0</span>
+								<!--<span>0</span>-->
 							</p>
 						</td>
 						<td colspan="4" class="hasbtn hasbtn4 hasbtnlg">
@@ -420,8 +408,13 @@
 				
 			
 			</table>	
+			<div class="decl-btn">
+				<button>添加</button>
+				<button>插入</button>
+				<button>复制</button>
+			</div>
 			<div class="goods">
-				<table >
+				<table class="table tableclick">
 					<thead>
 						<tr>
 							<th>序号</th>
@@ -433,6 +426,7 @@
 							<th>报检重量</th>
 							<th>货物总值</th>
 							<th>用途</th>
+							<th>操作</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -446,6 +440,7 @@
 							<td>11</td>
 							<td>111</td>
 							<td>食用</td>
+							<td><img src="img/delete.gif"/></td>
 						</tr>
 						<tr>
 							<td>1</td>
@@ -457,23 +452,36 @@
 							<td>11</td>
 							<td>111</td>
 							<td>食用</td>
+							<td><img src="img/delete.gif"/></td>
+						</tr>
+						<tr id="div1">
+							<td>1</td>
+							<td>0301959000</td>
+							<td>0301959000999</td>
+							<td>衢州市江山市</td>
+							<td>其他南方蓝鳍金枪鱼其他南方蓝鳍金枪鱼其他南方蓝鳍金枪鱼(Thunnus maccoyii)</td>
+							<td>10</td>
+							<td>11</td>
+							<td>111</td>
+							<td>食用</td>
+							<td><img src="img/delete.gif"/></td>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td>0301959000</td>
+							<td>0301959000999</td>
+							<td>衢州市江山市</td>
+							<td>其他南方蓝鳍金枪鱼其他南方蓝鳍金枪鱼其他南方蓝鳍金枪鱼(Thunnus maccoyii)</td>
+							<td>10</td>
+							<td>11</td>
+							<td>111</td>
+							<td>食用</td>
+							<td><img src="img/delete.gif"/></td>
 						</tr>
 					</tbody>
 					
 				</table>
 				
-			</div>
-			<div class="decl-btn">
-				<span>第1项</span>
-				<span>共1项</span>
-				<button>第一条</button>
-				<button>上一条</button>
-				<button>下一条</button>
-				<button>末一条</button>
-				<button>添加</button>
-				<button>插入</button>
-				<button>复制</button>
-				<button>删除</button>
 			</div>
 			<div class="dashedbar"><span>集装箱信息</span></div>	
 			<table class="table" >
@@ -492,22 +500,16 @@
 						</td>
 						<th>拼箱标识</th>
 						<td><input type="checkbox" /></td>
+						<td><img src="img/delete.gif"/></td>
 						
 					</tr>
 					
 				</tbody>
 			</table>			
 			<div class="decl-btn">
-				<span>第1项</span>
-				<span>共1项</span>
-				<button>第一条</button>
-				<button>上一条</button>
-				<button>下一条</button>
-				<button>末一条</button>
 				<button>添加</button>
 				<button>插入</button>
 				<button>复制</button>
-				<button>删除</button>
 			</div>
 			
 			
@@ -515,7 +517,7 @@
 			<!--企业资质弹窗-->
 			<div class="usePopup reverse enterprise">
 				<div class="usePopup-top">
-					<table class="enterprise-list tableclick" >
+					<table class="table" >
 						<thead>
 							<tr>
 								<th>序号</th>
@@ -524,7 +526,7 @@
 								<th>资质编号</th>
 								<th>组织机构代码</th>
 								<th>企业名称</th>
-								<!--<th>截止日期</th>-->
+								<th>操作</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -535,7 +537,7 @@
 								<td>衢州市江山市</td>
 								<td>(Thunnus maccoyii)</td>
 								<td>10</td>
-								<!--<td>11</td>-->
+								<td><img src="img/delete.gif"></td>
 							</tr>
 							<tr>
 								<td>1</td>
@@ -544,7 +546,7 @@
 								<td>衢州市江山市</td>
 								<td>(Thunnus maccoyii)</td>
 								<td>10</td>
-								<!--<td>11</td>-->
+								<td><img src="img/delete.gif"></td>
 							</tr>
 							<tr>
 								<td>1</td>
@@ -553,7 +555,7 @@
 								<td>衢州市江山市</td>
 								<td>(Thunnus maccoyii)</td>
 								<td>10</td>
-								<!--<td>11</td>-->
+								<td><img src="img/delete.gif"></td>
 							</tr>
 						</tbody>
 					</table>					
@@ -575,7 +577,6 @@
 					</table>					
 					<div class="decl-btn">
 						<button>添加</button>
-						<button>删除</button>
 						<button>确定</button>
 						<button>取消</button>
 					</div>							
@@ -1447,8 +1448,6 @@
 						$(this).addClass('active');
 					});
 				});
-				
-				
 				
 			
 		});

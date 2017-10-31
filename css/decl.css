@@ -81,7 +81,7 @@ button.button { margin: 0 5px; padding: 0 10px; text-align: center; height: 22px
 .usePopup .usePopup-top { height: 100%; overflow-x: hidden; overflow-y: auto;}
 .usePopup .usePopup-top table { width: 100%; text-align: center; }
 .usePopup .usePopup-top table th,.usePopup .usePopup-top table td { height: 24px; overflow: hidden ;  text-overflow: ellipsis;word-break: break-all; word-wrap:break-word; font-weight: normal; font-size: 12px; text-align: center; }
-.usePopup .usePopup-top table td,.usePopup .usePopup-top table th { min-width: 100px;}
+.usePopup .usePopup-top table td,.usePopup .usePopup-top table th { min-width: 50px;}
 .usePopup .usePopup-bottom { height: 60px; width: 100%; position: absolute; padding: 0 20px; left: 0; bottom: 10px; } 
 /*固定上半部，下半部可以滚动*/
 .usePopup.reverse {padding-top: 150px; padding-bottom: 10px; }
@@ -172,6 +172,8 @@ button.button { margin: 0 5px; padding: 0 10px; text-align: center; height: 22px
     background: linear-gradient(#fdfdf7, #bce9fe);
     border: 1px solid #b9d5f5;
 }
+
+
 
 
 
