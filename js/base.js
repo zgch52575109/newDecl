@@ -119,9 +119,9 @@ w.initByFocus = function (obj) {
 
 		if ($(obj).offset().left+$('#messagelist').width()>$(document).width()) {
 			
-			$('#messagelist').css({'left':'auto','right':$(document).width()-4-$(obj).offset().left-$(obj).width()+'px','top':$(obj).height()+4+$(obj).offset().top+'px'});
+			$('#messagelist').css({'left':'auto','right':$(document).width()-4-$(obj).offset().left-$(obj).width()+'px','top':$(obj).height()+$(obj).offset().top+'px'});
 		} else {
-			$('#messagelist').css({'left':'auto','left':$(obj).offset().left+'px','top':$(obj).height()+4+$(obj).offset().top+'px'});
+			$('#messagelist').css({'left':'auto','left':$(obj).offset().left+'px','top':$(obj).height()+$(obj).offset().top+'px'});
 		}
 		writelist(obj,arr);
 
