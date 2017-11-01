@@ -174,7 +174,7 @@ button.button { margin: 0 5px; padding: 0 10px; text-align: center; height: 22px
 }
 
 
-
+.table td input[type=text].validatebox-invalid { background-color:#d6fbd6 ;}
 
 
 
