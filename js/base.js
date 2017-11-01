@@ -190,8 +190,8 @@ $.fn.myCombo = function (options) {
 				}
 				mysel(obj,arr);
 		
-				
-				$(obj).keydown(function (e) {
+				$(obj).off('keydown');
+				$(obj).on('keydown',function (e) {
 					var num = $('#messagelist').attr('num');
 					if (e.keyCode==38||e.keyCode==40) {
 						if (e.keyCode==38) {
