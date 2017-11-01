@@ -243,6 +243,10 @@ $.fn.myCombo = function (options) {
 
 	function mysel(obj,arr) {
 		var val = $.trim($(obj).val());
+		if (val.indexOf('(')!=-1) {
+			val = val.substring(val.indexOf('(')+1,val.indexOf(')'));
+		}
+		console.log(val)
 		val = val.replace('(','').replace(')','');
 		if (val=='') {
 			writelist(obj,arr);
@@ -287,9 +291,9 @@ $.fn.myCombo = function (options) {
 			clicknext(obj);
 			return false;
 		});
-		if ($('#messagelist li').length==1) {
-			$('#messagelist li').eq(0).mousedown();
-		}
+//		if ($('#messagelist li').length==1) {
+//			$('#messagelist li').eq(0).mousedown();
+//		}
 	};
 	
 	function clicknext(obj) {
