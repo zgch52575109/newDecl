@@ -302,7 +302,7 @@ $.fn.myCombo = function (options) {
 			_namestr = _namestr.replace(/<strong>|<\/strong>/gi,'');
 			$(obj).val(_namestr+'('+_codestr+')');
 		}
-		options.afterSelect&&options.afterSelect();
+		options.afterSelect&&options.afterSelect(_codestr,_namestr);
 		hideauto(obj);
 		nextauto(obj);
 		return false;					
