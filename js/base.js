@@ -302,6 +302,9 @@ $.fn.myCombo = function (options) {
 			_namestr = _namestr.replace(/<strong>|<\/strong>/gi,'');
 			$(obj).val(_namestr+'('+_codestr+')');
 		}
+		if ($('#messagelist .no-data').length!=0) {
+			$(obj).val('');
+		}
 		options.afterSelect&&options.afterSelect(_codestr,_namestr,$(obj)[0].myajaxres);
 		hideauto(obj);
 		nextauto(obj);
