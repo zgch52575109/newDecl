@@ -121,6 +121,9 @@ $.fn.myCombo = function (options) {
 	}
 	options.width = options.width||'auto';
 	options.height = options.height||'auto';
+	options.mincharlen = options.mincharlen||'0';
+	
+	
 	
 	var obj = this;
 	var special_keys = {
@@ -157,7 +160,17 @@ $.fn.myCombo = function (options) {
 		123: "f12"
 	};
 
-	$(this).focus(function () {
+	if (parseInt(options.mincharlen)==0) {
+		$(this).focus(mycombouseajax);
+	} else {
+		$(obj).keyup(function () {
+			if ($(obj).val().length>=parseInt(options.mincharlen)) {
+				mycombouseajax();
+			}
+		});
+	};
+
+	function mycombouseajax() {
 		options.beforeInit&&options.beforeInit();
 		Api.ajax({
 			url:options.url,
@@ -175,11 +188,10 @@ $.fn.myCombo = function (options) {
 				for (var i = 0 ; i <res.length;i++) {
 					arr.push({'code':res[i][options.idField],'name':res[i][options.textField]});
 				}
-				writelist(obj,arr);
+				mysel(obj,arr);
 		
-				$(obj).off('keydown');
 				
-				$(obj).on('keydown',function (e) {
+				$(obj).keydown(function (e) {
 					var num = $('#messagelist').attr('num');
 					if (e.keyCode==38||e.keyCode==40) {
 						if (e.keyCode==38) {
@@ -209,28 +221,25 @@ $.fn.myCombo = function (options) {
 						return false;
 					}
 					if (e.keyCode==27) {
-						$(obj).off('blur');
 						hideauto(obj);
 						prevauto(obj);
 						return false;
 					}
 				});
-				$(obj).off('keyup');
-				$(obj).on('keyup',function (e) {
+				
+				$(obj).keyup(function (e) {
 					if (special_keys[e.keyCode]) {
 						return false;
 					}
 					mysel(obj,arr);
 				});
 				$('#messagelist').css('display','block');
-				$(obj).off('blur');
-				$(obj).on('blur',function () {
+				$(obj).blur(function () {
 					hideauto(obj);
 				});
 			}
-		});
-		
-	});
+		});		
+	};
 
 	function mysel(obj,arr) {
 		var val = $.trim($(obj).val());
