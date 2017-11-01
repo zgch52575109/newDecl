@@ -176,7 +176,7 @@ $.fn.myCombo = function (options) {
 			url:options.url,
 			fn:function (res) {
 				console.log(res);
-				
+				$(obj)[0].myajaxres = res;
 				$('#messagelist').css({'width':options.width,'height':options.height});
 				
 				if ($(obj).offset().left+$('#messagelist').width()>$(document).width()) {
@@ -302,7 +302,7 @@ $.fn.myCombo = function (options) {
 			_namestr = _namestr.replace(/<strong>|<\/strong>/gi,'');
 			$(obj).val(_namestr+'('+_codestr+')');
 		}
-		options.afterSelect&&options.afterSelect(_codestr,_namestr);
+		options.afterSelect&&options.afterSelect(_codestr,_namestr,$(obj)[0].myajaxres);
 		hideauto(obj);
 		nextauto(obj);
 		return false;					
