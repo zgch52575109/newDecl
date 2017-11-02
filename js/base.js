@@ -21,6 +21,7 @@
 				success:function (res) {
 					layer.close(Api.shade);		
 					Api._api[url] = false;
+					res = strtojson(res);
 					console.log(res);
 					if (res.success) {
 						options.fn&&options.fn(res.data);
@@ -30,7 +31,8 @@
 				},
 				error:function (json) {
 					layer.close(Api.shade);			
-					Api._api[url] = false;		
+					Api._api[url] = false;	
+					json = strtojson(json);
 					console.log(json);
 					if (json.status==401) {
 						alert("登录失效， 请重新登录。");
@@ -47,7 +49,19 @@
 		aaa:'123'
 		
 	};
-	
+	w.strtojson = function (str){
+		var json;
+		if (typeof(str)=='string') {
+			if (str[0]=='"'&&str[str.length-1]=='"') {
+				json = eval('('+str.substring(1,str.length-1)+')');
+			} else {
+				json = eval('('+str+')');
+			}		
+		} else {
+			json = str;
+		}	
+		return json;
+	};	
 	
 	//公用弹窗方法
 	w.uselayer = function (type,str,fn,fn2) {
