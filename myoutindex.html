@@ -45,8 +45,8 @@
 						
 						<th>企业资质</th>
 						<td colspan="3" class="hasbtn">
-							<div class="qyzz-inp">
-								<input type="text" readonly="readonly" />
+							<div>
+								<input class="qyzz-inp" type="text" readonly="readonly" />
 							</div>
 							<p>
 								<button class="enterprise-btn">选择</button>
@@ -529,7 +529,7 @@
 								<th>操作</th>
 							</tr>
 						</thead>
-						<tbody>
+						<tbody class="qyzz-list">
 							<tr>
 								<td>1</td>
 								<td>0301959000</td>
@@ -564,21 +564,21 @@
 					<table class="table" >
 						<tr>
 							<th><i>*</i>企业资质类别</th>
-							<td><input class="valid" type="text" /></td>
+							<td><input class="valid qyzz-lb" type="text" /></td>
 							<th><i>*</i>企业资质编号</th>
-							<td><input class="valid" type="text" /></td>
+							<td><input class="valid qyzz-bh" type="text" /></td>
 						</tr>
 						<tr>
 							<th><i>*</i>企业组织机构代码</th>
-							<td><input class="valid" type="text" /></td>
+							<td><input class="valid qyzz-dm" type="text" /></td>
 							<th><i>*</i>企业名称</th>
-							<td><input class="valid" type="text" /></td>
+							<td><input class="valid qyzz-mc" type="text" /></td>
 						</tr>
 					</table>					
 					<div class="decl-btn">
-						<button>添加</button>
-						<button>确定</button>
-						<button>取消</button>
+						<button class="qyzz-add">添加</button>
+						<button class="qyzz-sure">确定</button>
+						<button class="">取消</button>
 					</div>							
 				</div>
 		
@@ -1180,6 +1180,9 @@
 	<script>
 		$(function () {
 				
+
+				
+				
 				$('#seldeclName').myCombo({
 					idField:'idValue',
 					textField:'textValue',
@@ -1232,21 +1235,62 @@
 			
 				
 				
-				
-				
-				
-				
-				
-				
-				
+				/*定义企业资质的弹窗编号*/
+				var qyzzindex;
+				/*调起企业资质的弹窗*/
 				$('.enterprise-btn').click(function () {
-					uselayeropen({
+					qyzzindex = uselayeropen({
 						title: '企业资质信息',
-						obj:$('.enterprise')
+						obj:$('.enterprise'),
+						fn:function () {
+							/*弹出成功后默认聚焦企业类别输入框*/
+							$('.qyzz-lb').focus();
+						},
+						end:function () {
+							/*弹窗消失清空几个输入框的数据*/
+							$('.qyzz-lb,qyzz-bh,qyzz-dm,qyzz-mc').val('');	
+						}
 					});
-										
-					
 				});
+				/*点击添加按钮将输入信息添加进表格*/
+				$('.qyzz-add').click(function () {
+					if ($.trim($('.qyzz-lb').val())==''||$.trim($('.qyzz-bh').val())==''||$.trim($('.qyzz-dm').val())==''||$.trim($('.qyzz-mc').val())=='') {
+						uselayer(3,'必填项不能为空');
+						return false;
+					}
+					var str = 
+							'<tr>'
+								+'<td>'+($('.qyzz-list tr').length+1)+'</td>'
+								+'<td>'+$.trim($('.qyzz-lb').val())+'</td>'
+								+'<td> </td>'/*资质名称不知道填充什么值*/
+								+'<td>'+$.trim($('.qyzz-bh').val())+'</td>'
+								+'<td>'+$.trim($('.qyzz-dm').val())+'</td>'
+								+'<td>'+$.trim($('.qyzz-mc').val())+'</td>'
+								+'<td><img src="img/delete.gif"></td>'
+							+'</tr>';
+					$('.qyzz-list').append(str);
+					/*添加完成清空输入框数据，聚焦第一个输入框*/
+					$('.qyzz-lb,qyzz-bh,qyzz-dm,qyzz-mc').val('');
+					$('.qyzz-lb').focus();
+				});
+				/*判断如果点击的元素是删除的话，删除该行*/
+				$('.enterprise').click(function (e) {
+					if (e.target.tagName.toLowerCase()=='img') {
+						$(e.target).parent().parent().remove();
+					}
+				});
+				/*点击确认，默认将表格资质类别填充进企业资质的输入框，完场后关闭弹窗*/
+				$('.qyzz-sure').click(function () {
+					var _arr = [];
+					$('.qyzz-list tr').each(function () {
+						_arr.push($(this).find('td').eq(1).html());
+					});
+					$('.qyzz-inp').val(_arr.join(','));
+					layer.close(qyzzindex);
+				});
+								
+				
+				
 				
 				$('.marknum-btn').click(function () {
 					uselayeropen({
