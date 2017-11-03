@@ -1276,7 +1276,9 @@
 				/*判断如果点击的元素是删除的话，删除该行*/
 				$('.enterprise').click(function (e) {
 					if (e.target.tagName.toLowerCase()=='img') {
-						$(e.target).parent().parent().remove();
+						uselayer(2,'确定要删除吗？',function () {
+							$(e.target).parent().parent().remove();
+						});
 					}
 				});
 				/*点击确认，默认将表格资质类别填充进企业资质的输入框，完场后关闭弹窗*/
