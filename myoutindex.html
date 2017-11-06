@@ -503,6 +503,54 @@
 						<td><img src="img/delete.gif"/></td>
 						
 					</tr>
+					<tr>
+						<th>集装箱规格</th>
+						<td><input type="text"></td>
+						<th>数量</th>
+						<td><input type="text"></td>
+						
+						<th>号码</th>
+						<td class="hasbtn">
+							<div><input type="text"></div>
+							<p><button class="containerNum-btn">选择</button></p>
+						</td>
+						<th>拼箱标识</th>
+						<td><input type="checkbox" /></td>
+						<td><img src="img/delete.gif"/></td>
+						
+					</tr>
+					<tr>
+						<th>集装箱规格</th>
+						<td><input type="text"></td>
+						<th>数量</th>
+						<td><input type="text"></td>
+						
+						<th>号码</th>
+						<td class="hasbtn">
+							<div><input type="text"></div>
+							<p><button class="containerNum-btn">选择</button></p>
+						</td>
+						<th>拼箱标识</th>
+						<td><input type="checkbox" /></td>
+						<td><img src="img/delete.gif"/></td>
+						
+					</tr>
+					<tr>
+						<th>集装箱规格</th>
+						<td><input type="text"></td>
+						<th>数量</th>
+						<td><input type="text"></td>
+						
+						<th>号码</th>
+						<td class="hasbtn">
+							<div><input type="text"></div>
+							<p><button class="containerNum-btn">选择</button></p>
+						</td>
+						<th>拼箱标识</th>
+						<td><input type="checkbox" /></td>
+						<td><img src="img/delete.gif"/></td>
+						
+					</tr>
 					
 				</tbody>
 			</table>			
@@ -686,10 +734,20 @@
 									<th>单据类型</th>
 									<th>正本</th>
 									<th>副本</th>
+									<th>序号</th>
+									<th>代码</th>
+									<th>单据类型</th>
+									<th>正本</th>
+									<th>副本</th>
 								</tr>
 							</thead>
 							<tbody>
 								<tr>
+									<td><input type="checkbox" /><label>1</label></td>
+									<td>11</td>
+									<td>品质证书</td>
+									<td><input type="text" value="1" /></td>
+									<td><input type="text" value="2" /></td>
 									<td><input type="checkbox" /><label>1</label></td>
 									<td>11</td>
 									<td>品质证书</td>
@@ -802,21 +860,15 @@
 								<th>使用人名称</th>
 								<th>使用单位联系人</th>
 								<th>使用单位联系电话</th>
+								<th>操作</th>
 							</tr>
 						</thead>
-						<tbody>
-							<tr>
-								<td><input type="checkbox" /><label>1</label></td>
-								<td>116301130</td>
-								<td>孙杰</td>
-								<td>速立达</td>
-								<td>18806211810</td>
-							</tr>
+						<tbody>	
 						</tbody>
 					</table>					
 				</div>
 				<div class="usePopup-bottom">
-					<table class="table" >
+					<!--<table class="table" >
 						<tr>
 							<th>使用人代码</th>
 							<td><input type="text" /></td>
@@ -830,11 +882,9 @@
 							<td><input type="text" /></td>
 						</tr>
 						
-					</table>
+					</table>-->
 					<div class="decl-btn">
 						<button>增加</button>
-						<button>修改</button>
-						<button>删除</button>
 						<button>确定</button>
 						<button>取消</button>
 					</div>						
@@ -1354,13 +1404,48 @@
 					});
 					
 				});
+				
+				
+				var _syr = 
+
+					'<tr>'
+						+'<td><label>1</label></td>'
+						+'<td><input type="text" /></td>'
+						+'<td><input type="text" /></td>'
+						+'<td><input type="text" /></td>'
+						+'<td><input type="text" /></td>'
+						+'<td><img src="img/delete.gif" /></td>'
+					+'</tr>';			
+				
 				$('.attachUser-btn').click(function () {
 					uselayeropen({
 						title: '使用人',
-						obj:$('.attachUser')
+						obj:$('.attachUser'),
+						height:'200px',
+						fn:function () {
+							
+							
+						},
+						end:function () {
+							uselayer(1,'buxng')
+						}
 					});
 					
 				});
+				
+				$('.attachUser tbody').append(_syr)
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
 				$('.cargoAttribute-btn').click(function () {
 					uselayeropen({
 						title: '货物属性',
