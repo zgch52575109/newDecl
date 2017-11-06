@@ -884,7 +884,7 @@
 						
 					</table>-->
 					<div class="decl-btn">
-						<button>增加</button>
+						<button class="attachUser-add">增加</button>
 						<button>确定</button>
 						<button>取消</button>
 					</div>						
@@ -1421,7 +1421,7 @@
 					uselayeropen({
 						title: '使用人',
 						obj:$('.attachUser'),
-						height:'200px',
+						height:'300px',
 						fn:function () {
 							
 							
@@ -1432,8 +1432,20 @@
 					});
 					
 				});
+				$('.attachUser-add').click(function () {
+					$('.attachUser tbody').append(_syr);
+					/*滚动条移动到最下方，需要可以放开注释*/
+//					$('.attachUser .usePopup-top').scrollTop($('.attachUser .table').height()-$('.attachUser .usePopup-top').height());
+				});
+				/*判断如果点击的元素是删除的话，删除该行*/
+				$('.attachUser').click(function (e) {
+					if (e.target.tagName.toLowerCase()=='img') {
+						uselayer(2,'确定要删除吗？',function () {
+							$(e.target).parent().parent().remove();
+						});
+					}
+				});				
 				
-				$('.attachUser tbody').append(_syr)
 				
 				
 				
