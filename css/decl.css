@@ -181,6 +181,6 @@ button.button { margin: 0 5px; padding: 0 10px; text-align: center; height: 22px
 .table td input[type=text].validatebox-invalid { background-color:#d6fbd6 ;}
 
 
-.ui-front { z-index: 19891016;}
+.ui-front { z-index: 19891016!important;}
 
 .bill .usePopup-top table td,.bill .usePopup-top table th { min-width: 60px;}
