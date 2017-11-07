@@ -184,4 +184,5 @@ button.button,input[type=button].button  { margin: 0 5px; padding: 0 10px; text-
 .ui-front,.tooltip { z-index: 19891016!important;}
 
 
-.bill .usePopup-top table td,.bill .usePopup-top table th { min-width: 60px;}
+.bill.usePopup .usePopup-top table.table { float: left; width: 48%; margin: 0 1%;}
+/*.bill .usePopup-top table td,.bill .usePopup-top table th { min-width: 60px;}*/
