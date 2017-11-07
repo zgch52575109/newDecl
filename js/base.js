@@ -92,12 +92,15 @@
 		options.title = options.title||'';
 		options.width = options.width||$(window).width()*0.6+'px';
 		options.height = options.height||$(window).height()*0.8+'px';
+		options.closeBtn = options.close===false?0:1;
+		options.shadeClose = options.close||true;
+		
 //		$('body').css({'width':'100%','height':'100%','overflow':'hidden'});
 		var layerindex = layer.open({
 						type: 1,
 						title: options.title,
-						closeBtn: 1,
-						shadeClose:true,
+						closeBtn: options.closeBtn,
+						shadeClose:options.shadeClose,
 						area: [options.width,options.height],
 						content: options.obj, 
 						success:function () {
