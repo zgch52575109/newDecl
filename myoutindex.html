@@ -654,27 +654,31 @@
 			</div>
 			<!--标记及号码 附页弹窗-->
 			<div class="attached">
-				<div>
+				<form>
 					<span>附件：</span>
-					<input type="text" class="attached-file-name" placeholder="jpg,gif,bmp,png的图片大小为1M内" readonly="readonly" />
-					<button class="button attached-file-btn">本地浏览</button>
-				</div>
-				<div>
-					<ul>
-						<li class="hide">
-							<span></span>
-							<input class="attached-file hide" type="file" />
-						</li>
-					</ul>
-					<p>
-						<button class="button attached-file-add">添加</button>
-						<button class="button">删除</button>
-					</p>					
-				</div>
+					<!--<input type="text" class="attached-file-name" placeholder="jpg,gif,bmp,png的图片大小为1M内" readonly="readonly" />-->
+					<input type="file" class="attached-file" />
+					<input type="button" class="button attached-file-add" value="添加" />
+				</form>
+				<!--<ul>
+					<li></li>
+				</ul>		-->
+				<table class="table center">
+					<thead>
+						<tr>
+							<th>文件名</th>
+							<th>操作</th>							
+						</tr>
+					</thead>
+					<tbody>
+						<td style="border: none;"></td>
+						<td style="border: none;"></td>
+					</tbody>
+				</table>
 				<div class="decl-btn center">
-					<button>确定</button>
-					<button>取消</button>
-				</div>	
+					<input type="button" value="确定" />
+					<input type="button" value="取消" />
+				</div>					
 			</div>
 			
 			<!--特种业务标识-->
@@ -1611,37 +1615,26 @@
 				
 				
 				
-				var attachedStr = $('.attached ul li.hide').prop('outerHTML');
-				$('.attached-file-btn').click(function () {
-					$('.attached ul li.hide input').click();
-				});
+				
 				$('.attached-file-add').click(function () {
-					if ($('.attached-file-name').val()=='') {
+					if ($('.attached-file').val()=='') {
 						uselayer(3,'请先选择文件');
 						return false;
 					}
-					$('.attached ul li.hide span').html($('.attached-file-name').val());
-					$('.attached-file-name').val('');
-					$('.attached ul li.hide').removeClass('hide');
-					$('.attached ul').append(attachedStr);
-					attachedchange();
+					$('.attached .table tbody').append('<tr><td>'+$('.attached-file')[0].files[0].name+'</td><td><img src="img/delete.gif" /></td></tr>');
+					$('.attached-file').val('');
 				});
+				/*判断如果点击的元素是删除的话，删除该行*/
+				$('.attached').click(function (e) {
+					if (e.target.tagName.toLowerCase()=='img') {
+						uselayer(2,'确定要删除吗？',function () {
+							$(e.target).parent().parent().remove();
+						});
+					}
+				});					
 				
 				
-				attachedchange();
-				
-				function attachedchange() {
-					
-					$('.attached ul li.hide input').change(function () {
-						if ($(this).val()!='') {
-							$('.attached-file-name').val($(this).val());
-						} else {
-							$('.attached-file-name').val('');
-						}
-					});					
-					
-				};
-				
+
 				
 				
 				

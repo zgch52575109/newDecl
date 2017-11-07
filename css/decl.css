@@ -104,11 +104,12 @@ button.button,input[type=button].button  { margin: 0 5px; padding: 0 10px; text-
 
 /*附页*/
 .attached { padding: 20px; display: none;}
-.attached input { width: 220px; height: 22px; font-size: 12px;}
-.attached div { overflow: hidden; padding-top: 20px;}
-.attached ul { float: left; margin-left: 20px; width: 245px; height: 200px; border: 1px solid #ccc; }
+.attached input[type=file] { border: 1px solid #ccc; width: 250px; height: 24px; font-size: 12px;}
+.attached ul {margin-top: 20px; height: 200px; border: 1px solid #ccc; }
 .attached p { float: left; width: 95px; height: 200px; padding:  20px;}
 .attached p button,.attached p input[type=button] { margin: 25px 5px;}
+.attached .table { margin-top: 20px;}
+.attached .table tr td:last-child,.attached .table tr th:last-child { width: 5%;white-space:nowrap}
 
 /*特种业务标识*//*特殊通关模式*/
 .special,.clearance { padding: 20px; display: none;}
