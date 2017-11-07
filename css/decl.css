@@ -51,7 +51,7 @@ table.table td,table.table th{border-left:1px solid #dbdee1;border-top:1px solid
 .hasbtn div { padding-right: 50px; overflow: hidden;}
 
 .hasbtn p { position: absolute; top: 0; right: 0px;}
-.hasbtn p button,.hasbtn p span { float: left; margin: 0 5px; width: 40px; text-align: center; height: 22px; line-height: 22px; border: none; color: #fff; font-size: 12px; background: #53a4ea;}
+.hasbtn p button,.hasbtn p input[type=button],.hasbtn p span { float: left; margin: 0 5px; width: 40px; text-align: center; height: 22px; line-height: 22px; border: none; color: #fff; font-size: 12px; background: #53a4ea;}
 .hasbtn p span { background: none; color: #000;}
 
 .table td.hasinp input { width: 50%; float: left; border-right: 1px solid #ccc;}
@@ -64,10 +64,10 @@ table.table td,table.table th{border-left:1px solid #dbdee1;border-top:1px solid
 .hasbtn.hasbtn5 div { padding-right: 250px;}
 
 .hasbtn.hasbtnlg p { width: 100%;}
-.hasbtn.hasbtnlg p button { width: 20%; margin: 0 2.5%;}
+.hasbtn.hasbtnlg p button,.hasbtn.hasbtnlg p input[type=button] { width: 20%; margin: 0 2.5%;}
 
 .decl-btn { text-align: right; margin: 20px;}
-.decl-btn button { margin: 0 5px; padding: 0 10px; text-align: center; height: 22px; line-height: 22px; border: none; color: #fff; font-size: 12px; background: #53a4ea;}
+.decl-btn button,.decl-btn input[type=button] { margin: 0 5px; padding: 0 10px; text-align: center; height: 22px; line-height: 22px; border: none; color: #fff; font-size: 12px; background: #53a4ea;}
 
 .goods table {table-layout: fixed;  width: 100%; white-space: nowrap; margin-top: 20px;}
 .goods table th,.goods table td { height: 24px; overflow: hidden ;  text-overflow: ellipsis;word-break: break-all; word-wrap:break-word; font-weight: normal; font-size: 12px; text-align: center; width: 11%; }
@@ -75,7 +75,7 @@ table.table td,table.table th{border-left:1px solid #dbdee1;border-top:1px solid
 
 table.table tbody tr.active { background: #eee;}
 
-button.button { margin: 0 5px; padding: 0 10px; text-align: center; height: 22px; line-height: 22px; border: none; color: #fff; font-size: 12px; background: #53a4ea; }
+button.button,input[type=button].button  { margin: 0 5px; padding: 0 10px; text-align: center; height: 22px; line-height: 22px; border: none; color: #fff; font-size: 12px; background: #53a4ea; }
 .center { text-align: center;}
 .clear { clear: both;}
 .hide { display: none;}
@@ -108,7 +108,7 @@ button.button { margin: 0 5px; padding: 0 10px; text-align: center; height: 22px
 .attached div { overflow: hidden; padding-top: 20px;}
 .attached ul { float: left; margin-left: 20px; width: 245px; height: 200px; border: 1px solid #ccc; }
 .attached p { float: left; width: 95px; height: 200px; padding:  20px;}
-.attached p button { margin: 25px 5px;}
+.attached p button,.attached p input[type=button] { margin: 25px 5px;}
 
 /*特种业务标识*//*特殊通关模式*/
 .special,.clearance { padding: 20px; display: none;}
