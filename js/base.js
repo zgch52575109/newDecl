@@ -108,6 +108,15 @@
 							});
 							options.fn&&options.fn();
 						},
+						cancel:function () {
+							var bOk = true;
+							if (options.cancel) {
+								bOk = options.cancel();
+								if (!bOk) {
+									return false;
+								}
+							}
+						},
 						end:function () {
 //							$('body').css({'width':'auto','height':'auto','overflow':'auto'});
 							options.end&&options.end();
