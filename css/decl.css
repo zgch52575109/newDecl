@@ -84,7 +84,7 @@ button.button,input[type=button].button  { margin: 0 5px; padding: 0 10px; text-
 .usePopup { display: none; padding: 20px; padding-bottom: 70px; height: 100%; overflow: hidden; position: relative;}
 .usePopup .usePopup-top { height: 100%; overflow-x: hidden; overflow-y: auto;}
 .usePopup .usePopup-top table { width: 100%; text-align: center; }
-.usePopup .usePopup-top table th,.usePopup .usePopup-top table td { height: 24px; overflow: hidden ;  text-overflow: ellipsis;word-break: break-all; word-wrap:break-word; font-weight: normal; font-size: 12px; text-align: center; }
+.usePopup .usePopup-top table th,.usePopup .usePopup-top table td { width: auto; white-space: nowrap; height: 24px; overflow: hidden ;  text-overflow: ellipsis;word-break: break-all; word-wrap:break-word; font-weight: normal; font-size: 12px; text-align: center; }
 .usePopup .usePopup-top table td,.usePopup .usePopup-top table th { min-width: 50px;}
 .usePopup .usePopup-bottom { height: 60px; width: 100%; position: absolute; padding: 0 20px; left: 0; bottom: 10px; } 
 /*固定上半部，下半部可以滚动*/
@@ -110,6 +110,7 @@ button.button,input[type=button].button  { margin: 0 5px; padding: 0 10px; text-
 .attached p button,.attached p input[type=button] { margin: 25px 5px;}
 .attached .table { margin-top: 20px;}
 .attached .table tr td:last-child,.attached .table tr th:last-child { width: 5%;white-space:nowrap}
+.attached .table tr td a { color: blue;}
 
 /*特种业务标识*//*特殊通关模式*/
 .special,.clearance { padding: 20px; display: none;}
@@ -118,8 +119,8 @@ button.button,input[type=button].button  { margin: 0 5px; padding: 0 10px; text-
 /*需要证单*/
 .bill .table td input[type=text] { text-align: center; text-indent: 0;}
 /*随附单据*/
-.attachNotes { padding-bottom: 200px;}
-.attachNotes .usePopup-bottom { height: 170px;}
+.attachNotes { padding-bottom: 80px;}
+.attachNotes .usePopup-bottom { height: 60px;}
 /*使用人*/
 .attachUser { padding-bottom: 82px;}
 .attachUser .usePopup-bottom { height: 52px;}
@@ -187,3 +188,10 @@ button.button,input[type=button].button  { margin: 0 5px; padding: 0 10px; text-
 
 .bill.usePopup .usePopup-top table.table { float: left; width: 48%; margin: 0 1%;}
 /*.bill .usePopup-top table td,.bill .usePopup-top table th { min-width: 60px;}*/
+
+
+
+.usePopup .usePopup-top table td.xuhao, .usePopup .usePopup-top table th.xuhao { min-width: auto; width: auto;}
+.xuhao div { width: 30px;}
+
+

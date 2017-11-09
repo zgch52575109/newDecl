@@ -869,58 +869,37 @@
 					<table class="table" >
 						<thead>
 							<tr>
-								<th>序号</th>
+								<th class="xuhao"><div>序号</div></th>
 								<th>代码</th>
-								<th>名称</th>
+								<th>单据名称</th>
+								<th>核销明细余量</th>
+								<th>单据编号</th>
+								<th>核销货物序号</th>
+								<th>核销数量</th>
+								<th>核销后余量</th>
+								<th>操作</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
-								<td><input type="checkbox" /><label>1</label></td>
-								<td>11</td>
-								<td>品质证书</td>
+								<td class="xuhao"><div>1</div></td>
+								<td><input type="text" /></td>
+								<td><input type="text" /></td>
+								<td><input type="text" /></td>
+								<td><input type="text" /></td>
+								<td><input type="text" /></td>
+								<td><input type="text" /></td>
+								<td><input type="text" /></td>
+								<td><img src="img/delete.gif"/></td>
 							</tr>
 						</tbody>
 					</table>					
 				</div>
 
 				<div class="usePopup-bottom">
-					<table class="table" >
-						<tr>
-							<th>代码</th>
-							<td><input readonly="readonly" type="text" /></td>
-							<th>单据名称</th>
-							<td><input readonly="readonly" type="text" /></td>
-							<th>核销明细余量</th>
-							<td><input type="text" /></td>
-						</tr>
-						<tr>
-							<th>单据编号</th>
-							<td><input type="text" /></td>
-							<th>核销货物序号</th>
-							<td><input type="text" /></td>
-							<th>核销数量</th>
-							<td><input type="text" /></td>
-						</tr>
-						<tr>
-							<th>核销后余量</th>
-							<td><input type="text" /></td>
-							<td colspan="4"></td>
-						</tr>
-						
-					</table>
 					<div class="decl-btn">
-						<button><<</button>
-						<button><</button>
-						<button>></button>
-						<button>>></button>
 						<button>添加</button>
-						<button>删除</button>
-					</div>	
-					<div class="decl-btn">
-						<button>清空</button>
 						<button>确定</button>
-						<button>取消</button>
 					</div>						
 				</div>
 			</div>
@@ -1621,7 +1600,7 @@
 						uselayer(3,'请先选择文件');
 						return false;
 					}
-					$('.attached .table tbody').append('<tr><td>'+$('.attached-file')[0].files[0].name+'</td><td><img src="img/delete.gif" /></td></tr>');
+					$('.attached .table tbody').append('<tr><td><a href="'+$('.attached-file').val()+'" target="_blank">'+$('.attached-file')[0].files[0].name+'</a></td><td><img src="img/delete.gif" /></td></tr>');
 					$('.attached-file').val('');
 				});
 				/*判断如果点击的元素是删除的话，删除该行*/
