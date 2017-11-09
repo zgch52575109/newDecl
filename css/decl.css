@@ -191,7 +191,7 @@ button.button,input[type=button].button  { margin: 0 5px; padding: 0 10px; text-
 
 
 
-.usePopup .usePopup-top table td.xuhao, .usePopup .usePopup-top table th.xuhao { min-width: auto; width: auto;}
-.xuhao div { width: 30px;}
+.usePopup .usePopup-top table td:first-child, .usePopup .usePopup-top table th:first-child { min-width: 30px;}
+/*.xuhao div { width: 30px;}*/
 
 
