@@ -94,11 +94,12 @@
 		options.height = options.height||$(window).height()*0.8+'px';
 		options.closeBtn = options.close===false?0:1;
 		options.shadeClose = options.close||true;
-		
+		options.zindex = options.zindex||999;
 //		$('body').css({'width':'100%','height':'100%','overflow':'hidden'});
 		var layerindex = layer.open({
 						type: 1,
 						title: options.title,
+						zIndex:options.zindex,
 						closeBtn: options.closeBtn,
 						shadeClose:options.shadeClose,
 						area: [options.width,options.height],
