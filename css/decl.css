@@ -54,10 +54,10 @@ table.table td,table.table th{border-left:1px solid #dbdee1;border-top:1px solid
 .hasbtn p button,.hasbtn p input[type=button],.hasbtn p span { float: left; margin: 0 5px; width: 40px; text-align: center; height: 22px; line-height: 22px; border: none; color: #fff; font-size: 12px; background: #53a4ea;}
 .hasbtn p span { background: none; color: #000;}
 
-.table td.hasinp span { width: 50%; float: left; border-right: 1px solid #ccc;}
-.table td.hasinp span:last-child { border-right: none;}
+.table td.hasinp span.useinp { width: 50%; float: left; border-right: 1px solid #ccc;}
+.table td.hasinp span.useinp:last-child { border-right: none;}
 /*.table td.hasinp i { float: left; height: 100%; width: 0px; border: 1px solid #ccc;}*/
-.table td.hasinp3 span { width: 33.3%;}
+.table td.hasinp3 span.useinp { width: 33.3%;}
 
 
 .hasbtn.hasbtn2 div { padding-right: 100px;}
