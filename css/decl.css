@@ -22,7 +22,7 @@ table.table td,table.table th{border-left:1px solid #dbdee1;border-top:1px solid
 .table td input.valid { background-color: #d6fbd6;}
 
 .table td input[readonly=readonly] {
-    background-color: #f2f2f2;
+    /*background-color: #f2f2f2;*/
 }
 
 .table .arrow  { position: absolute; top: 3px; right: 3px; width: 16px; height: 16px; background: url(../img/combo_arrow.png) no-repeat;}
