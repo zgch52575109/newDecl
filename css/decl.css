@@ -71,7 +71,8 @@ table.table td,table.table th{border-left:1px solid #dbdee1;border-top:1px solid
 .decl-btn { text-align: right; margin: 20px;}
 .decl-btn button,.decl-btn input[type=button] { margin: 0 5px; padding: 0 10px; text-align: center; height: 22px; line-height: 22px; border: none; color: #fff; font-size: 12px; background: #53a4ea;}
 
-.goods table {table-layout: fixed;  width: 100%; white-space: nowrap; margin-top: 20px;}
+.goods { overflow: hidden;}
+.goods table {table-layout: fixed;  width: 100%; white-space: nowrap; }
 .goods table th,.goods table td { height: 24px; overflow: hidden ;  text-overflow: ellipsis;word-break: break-all; word-wrap:break-word; font-weight: normal; font-size: 12px; text-align: center; width: 11%; }
 .goods table { }
 

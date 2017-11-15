@@ -1636,6 +1636,17 @@
 				});
 				
 			
+			
+			
+			$('.goods thead').click(function () {
+				if ($(this)[0].bOpen) {
+					$('.goods').stop().animate({'height':($('.goods table tr').length*24+1)+'px'});
+					$(this)[0].bOpen = false;
+				} else {
+					$('.goods').stop().animate({'height':$('.goods thead').height()+1+'px'});
+					$(this)[0].bOpen = true;
+				}
+			});
 		});
 		
 		
