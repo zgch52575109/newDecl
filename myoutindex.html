@@ -403,6 +403,7 @@
 			
 			</table>	
 			<div class="decl-btn">
+				<button class="goods-draw">收起列表</button>
 				<button>添加</button>
 				<button>插入</button>
 				<button>复制</button>
@@ -1638,11 +1639,13 @@
 			
 			
 			
-			$('.goods thead').click(function () {
+			$('.goods-draw').click(function () {
 				if ($(this)[0].bOpen) {
+					$(this).html('收起列表');
 					$('.goods').stop().animate({'height':($('.goods table tr').length*24+1)+'px'});
 					$(this)[0].bOpen = false;
 				} else {
+					$(this).html('展开列表');
 					$('.goods').stop().animate({'height':$('.goods thead').height()+1+'px'});
 					$(this)[0].bOpen = true;
 				}

@@ -193,3 +193,5 @@ button.button,input[type=button].button  { margin: 0 5px; padding: 0 10px; text-
 /*.xuhao div { width: 30px;}*/
 
 .hasbtn p button.greyBtn, .hasbtn p input[type=button].greyBtn, .hasbtn p span.greyBtn { background: #607D8B; }
+
+.goods-draw { float: left;}
