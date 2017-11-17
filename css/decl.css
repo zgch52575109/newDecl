@@ -195,3 +195,11 @@ button.button,input[type=button].button  { margin: 0 5px; padding: 0 10px; text-
 .hasbtn p button.greyBtn, .hasbtn p input[type=button].greyBtn, .hasbtn p span.greyBtn { background: #607D8B; }
 
 .goods-draw { float: left;}
+
+.text-left { text-align: left;}
+.text-center { text-align: center;}
+.text-right { text-align: right;}
+
+.jzx { overflow: hidden;}
+.jzx .jzx-left,.jzx .jzx-right { width: 49%; float: left; margin-right: 1%;}
+.jzx .jzx-right { margin: 0; margin-left: 1%;}

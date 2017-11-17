@@ -375,7 +375,7 @@
 					</tr>
 					<tr>
 						<th>产品资质</th>
-						<td colspan="3" class="hasbtn hasinp">
+						<td colspan="4" class="hasbtn hasinp">
 							<div>
 								<span class="useinp"><input readonly="readonly" type="text" /></span>
 								<span class="useinp"><input readonly="readonly" type="text" /></span>
@@ -385,12 +385,12 @@
 								<!--<span>0</span>-->
 							</p>
 						</td>
-						<td colspan="4" class="hasbtn hasbtn4 hasbtnlg">
+						<td colspan="3" class="hasbtn hasbtn4 hasbtnlg">
 							<p>
 								<button class="boxCorrespondence-btn">箱货对应关系</button>
 								<button class="spare-btn">备用信息</button>
 								<button class="danger-btn">危险货物信息</button>
-								<button class="goodsValue-btn">查看货物总信息</button>
+								
 							</p>
 							
 						</td>
@@ -404,6 +404,7 @@
 			</table>	
 			<div class="decl-btn">
 				<button class="goods-draw">收起列表</button>
+				<button class="goodsValue-btn">查看货物总信息</button>
 				<button>添加</button>
 				<button>插入</button>
 				<button>复制</button>
@@ -479,81 +480,124 @@
 				
 			</div>
 			<div class="dashedbar"><span>集装箱信息</span></div>	
-			<table class="table" >
-				<tbody>
-
-					<tr>
-						<th>集装箱规格</th>
-						<td><input type="text"></td>
-						<th>数量</th>
-						<td><input type="text"></td>
+			<div class="jzx">
+				<div class="jzx-left">
+					<table class="table" >
+						<tbody>
+							<tr>
+								<th>集装箱规格</th>
+								<td><input type="text"></td>
+								<th>数量</th>
+								<td><input type="text"></td>
+								
+								<th>号码</th>
+								<td class="hasbtn">
+									<div><input type="text"></div>
+									<p><button class="containerNum-btn">选择</button></p>
+								</td>
+								<th>拼箱标识</th>
+								<td><input type="checkbox" /></td>
+								<td><img src="img/delete.gif"/></td>
+							</tr>
+							<tr>
+								<th>集装箱规格</th>
+								<td><input type="text"></td>
+								<th>数量</th>
+								<td><input type="text"></td>
+								
+								<th>号码</th>
+								<td class="hasbtn">
+									<div><input type="text"></div>
+									<p><button class="containerNum-btn">选择</button></p>
+								</td>
+								<th>拼箱标识</th>
+								<td><input type="checkbox" /></td>
+								<td><img src="img/delete.gif"/></td>
+								
+							</tr>
+						</tbody>
+					</table>	
+					<div class="decl-btn" style="margin-right: 0;">
+						<button>添加</button>
+						<button>插入</button>
+						<button>复制</button>
+					</div>					
+				</div>
+				<div class="jzx-right goods">
+				
+					<table class="table">
+						<thead>
+							<tr>
+								<th>序号</th>
+								<th>HS编码</th>
+								<th>ECIQ代码</th>
+								<th>原产国</th>
+								<th>货物名称</th>
+								<th>报检数量</th>
+								<th>报检重量</th>
+								<th>货物总值</th>
+								<th>用途</th>
+								<th>操作</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>1</td>
+								<td>0301959000</td>
+								<td>0301959000999</td>
+								<td>衢州市江山市</td>
+								<td>其他南方蓝鳍金枪鱼其他南方蓝鳍金枪鱼其他南方蓝鳍金枪鱼(Thunnus maccoyii)</td>
+								<td>10</td>
+								<td>11</td>
+								<td>111</td>
+								<td>食用</td>
+								<td><img src="img/delete.gif"/></td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>0301959000</td>
+								<td>0301959000999</td>
+								<td>衢州市江山市</td>
+								<td>其他南方蓝鳍金枪鱼其他南方蓝鳍金枪鱼其他南方蓝鳍金枪鱼(Thunnus maccoyii)</td>
+								<td>10</td>
+								<td>11</td>
+								<td>111</td>
+								<td>食用</td>
+								<td><img src="img/delete.gif"/></td>
+							</tr>
+							<tr id="div1">
+								<td>1</td>
+								<td>0301959000</td>
+								<td>0301959000999</td>
+								<td>衢州市江山市</td>
+								<td>其他南方蓝鳍金枪鱼其他南方蓝鳍金枪鱼其他南方蓝鳍金枪鱼(Thunnus maccoyii)</td>
+								<td>10</td>
+								<td>11</td>
+								<td>111</td>
+								<td>食用</td>
+								<td><img src="img/delete.gif"/></td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>0301959000</td>
+								<td>0301959000999</td>
+								<td>衢州市江山市</td>
+								<td>其他南方蓝鳍金枪鱼其他南方蓝鳍金枪鱼其他南方蓝鳍金枪鱼(Thunnus maccoyii)</td>
+								<td>10</td>
+								<td>11</td>
+								<td>111</td>
+								<td>食用</td>
+								<td><img src="img/delete.gif"/></td>
+							</tr>
+						</tbody>
 						
-						<th>号码</th>
-						<td class="hasbtn">
-							<div><input type="text"></div>
-							<p><button class="containerNum-btn">选择</button></p>
-						</td>
-						<th>拼箱标识</th>
-						<td><input type="checkbox" /></td>
-						<td><img src="img/delete.gif"/></td>
+					</table>
+													
+				</div>
 						
-					</tr>
-					<tr>
-						<th>集装箱规格</th>
-						<td><input type="text"></td>
-						<th>数量</th>
-						<td><input type="text"></td>
-						
-						<th>号码</th>
-						<td class="hasbtn">
-							<div><input type="text"></div>
-							<p><button class="containerNum-btn">选择</button></p>
-						</td>
-						<th>拼箱标识</th>
-						<td><input type="checkbox" /></td>
-						<td><img src="img/delete.gif"/></td>
-						
-					</tr>
-					<tr>
-						<th>集装箱规格</th>
-						<td><input type="text"></td>
-						<th>数量</th>
-						<td><input type="text"></td>
-						
-						<th>号码</th>
-						<td class="hasbtn">
-							<div><input type="text"></div>
-							<p><button class="containerNum-btn">选择</button></p>
-						</td>
-						<th>拼箱标识</th>
-						<td><input type="checkbox" /></td>
-						<td><img src="img/delete.gif"/></td>
-						
-					</tr>
-					<tr>
-						<th>集装箱规格</th>
-						<td><input type="text"></td>
-						<th>数量</th>
-						<td><input type="text"></td>
-						
-						<th>号码</th>
-						<td class="hasbtn">
-							<div><input type="text"></div>
-							<p><button class="containerNum-btn">选择</button></p>
-						</td>
-						<th>拼箱标识</th>
-						<td><input type="checkbox" /></td>
-						<td><img src="img/delete.gif"/></td>
-						
-					</tr>
-					
-				</tbody>
-			</table>			
-			<div class="decl-btn">
-				<button>添加</button>
-				<button>插入</button>
-				<button>复制</button>
 			</div>
+
+
 			
 			
 			

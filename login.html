@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html><head>
+<style>
+	/*ie6提示*/
+	#ie6-warning{width:100%;position:absolute;top:0;left:0;background:#fae692;padding:5px 0;font-size:12px}
+	#ie6-warning p{width:960px;margin:0 auto;}
+</style>
+
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="edge">
+<link rel="shortcut icon" href="http://192.168.1.108:8888/style/images/index/favicon.png">
+
+<!-- [my97日期时间控件] -->
+<script type="text/javascript" src="http://192.168.1.108:8888/jslib/My97DatePicker/WdatePicker.js" charset="utf-8"></script><link href="http://192.168.1.108:8888/jslib/My97DatePicker/skin/WdatePicker.css" rel="stylesheet" type="text/css">
+
+<!-- [jQuery] -->
+<script src="http://192.168.1.108:8888/jslib/easyui1.4.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- [EasyUI] -->
+<link id="easyuiTheme" rel="stylesheet" href="http://192.168.1.108:8888/jslib/easyui1.4.2/themes/bootstrap/easyui.css" type="text/css">
+<link id="easyuiTheme" rel="stylesheet" href="http://192.168.1.108:8888/jslib/easyui1.4.2/themes/icon.css" type="text/css">
+<script type="text/javascript" src="http://192.168.1.108:8888/jslib/easyui1.4.2/jquery.easyui.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://192.168.1.108:8888/jslib/easyui1.4.2/locale/easyui-lang-zh_CN.js" charset="utf-8"></script>
+<!-- cookie -->
+<script type="text/javascript" src="http://192.168.1.108:8888/jslib/jquery/jquery.cookie.js" charset="utf-8"></script>
+<!-- [扩展JS] -->
+<script type="text/javascript" src="http://192.168.1.108:8888/jslib/extJs.js" charset="utf-8"></script>
+<!-- [扩展EASYUI JS] -->
+
+<!-- [扩展lightmvc样式] -->
+<link rel="stylesheet" href="http://192.168.1.108:8888/style/css/lightmvc.css" type="text/css">
+<meta charset="utf-8">
+<title>新疆全申报系统</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width">
+<link href="http://192.168.1.108:8888/style/css/base.css" rel="stylesheet" type="text/css">
+<!--<link href="http://192.168.1.108:8888/style/css/login.css" rel="stylesheet" type="text/css">-->
+<link href="css/login.css" rel="stylesheet" type="text/css">
+
+<script>
+
+	var sessionInfo_userId = '';
+	if (sessionInfo_userId) {//如果登录,直接跳转到index页面
+		window.location.href='/admin/index';
+	}
+	
+	$(function() {
+		
+		$('#loginform').form({
+		    url:'/admin/login',
+		    onSubmit : function() {
+		    	progressLoad();
+				var isValid = $(this).form('validate');
+				if(!isValid){
+					progressClose();
+				} 
+				return isValid;
+			},
+		    success:function(result){
+		    	result = $.parseJSON(result);
+		    	progressClose();
+		    	if (result.success) {
+		    		window.location.href='/admin/index';
+		    	}else{
+		    		$.messager.show({
+		    			title:'提示',
+		    			msg:'<div class="light-info"><div class="light-tip icon-tip"></div><div>'+result.msg+'</div></div>',
+		    			showType:'show'
+		    		});
+		    	}
+		    }
+		});
+	});
+	
+	function submitForm(){
+		$('#loginform').submit();
+	}
+	
+	function clearForm(){
+		$('#loginform').form('clear');
+	}
+	
+	//回车登录
+	function enterlogin(){
+		if (event.keyCode == 13){
+        	event.returnValue=false;
+        	event.cancel = true;
+        	$('#loginform').submit();
+    	}
+	}
+	
+</script>
+<link type="text/css" rel="stylesheet" href="chrome-extension://ghihpjhpgdepnohngpgfcmcijmkggpaf/style.css"><script type="text/javascript" charset="utf-8" src="chrome-extension://ghihpjhpgdepnohngpgfcmcijmkggpaf/js/page_context.js"></script></head>
+<body onkeydown="enterlogin();" screen_capture_injected="true">
+	<div class="login">
+		<form method="post" id="loginform">
+	    <div class="login_form" style="position: relative;left: 110px;top: 184px;">
+	       <ul>
+	        <li><input class="text_value" type="text" name="entRegCode" data-options="required:true" value="6500910034" onfocus="if(value=='请输入企业注册号')  {value=''}" onblur="if (value=='') {value='请输入企业注册号'}"></li>
+	        <li><input class="text_value" type="text" name="username" data-options="required:true" value="admin" onfocus="if(value=='请输入用户名')  {value=''}" onblur="if (value=='') {value='请输入用户名'}"></li>
+	        <li><input class="text_value" type="password" name="password" value="833400" onfocus="if(value=='请输入密码')  {value='';type='password'}" onblur="if (value=='') {value='请输入密码';type='text'}"></li>
+	        <li style="padding-top: 15px;"><a href="http://192.168.1.108:8888/entRegApply/record" style="margin-left: 19px; text-decoration: underline; font-size: 15px; color: #620000;" target="_blank">企业备案</a></li>
+	       </ul>
+	       <button class="button" type="button" style="position: relative;left: 132px;top: -22px;" onclick="submitForm()">登录</button>
+	    </div>
+	    <div id="tip"></div>
+	    </form>
+	</div>
+	<!--[if lte IE 7]>
+	<div id="ie6-warning"><p>您正在使用 低版本浏览器，在本页面可能会导致部分功能无法使用。建议您升级到 <a href="http://www.microsoft.com/china/windows/internet-explorer/" target="_blank">Internet Explorer 8</a> 或以下浏览器：
+	<a href="http://www.mozillaonline.com/" target="_blank">Firefox</a> / <a href="http://www.google.com/chrome/?hl=zh-CN" target="_blank">Chrome</a> / <a href="http://www.apple.com.cn/safari/" target="_blank">Safari</a> / <a href="http://www.operachina.com/" target="_blank">Opera</a></p></div>
+	<![endif]-->
+	<div style="position: fixed;bottom: 5px;left: 210px;">
+	   微信公众号:<img src="http://192.168.1.108:8888/images/wxgzh.jpg" height="100px" width="100px">
+	 &nbsp;&nbsp;&nbsp;
+	 QQ服务群:<img src="http://192.168.1.108:8888/images/wxfwq.png" height="100px" width="100px">
+	</div>
+
+</body></html>

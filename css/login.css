@@ -1,0 +1,11 @@
+html, body { width: 100%; height: 100%; overflow: hidden; margin: 0; font-family: 'microsoft yahei'; background:url(../img/xj_bg.jpg) no-repeat center top; }
+html { background:#e4e6d1;_height: auto; _padding: 50px 0 0px; }
+
+.login { width:542px; height:542px; position:absolute; left:50%; margin-left:-60px; margin-top:25px;}
+./* logo { background-image:url(../img/admin_logo.png); background-repeat:no-repeat; background-position: 30px center; height:150px;} */
+.login_form { height:80px; margin-left:auto; margin-right:auto; width:600px;}
+.login_form .user{ background-image:url(../img/login_name_bg.jpg); width:540px; height:80px; float:left;}
+.login_form .button { background:url(../img/btn_bg3.png); width:80px; background-repeat:no-repeat; background-position:left center; height:54px; float:left; display:block; text-indent: -9999px; border:none; margin-top:10px; position:relative}
+.login_form .text_value {margin-left:17px; padding-left:10px; padding-right:8px; margin-top:8px; width:175px; height:38px; line-height:48px; font-size:15px; color:#666; font-weight:bold; border:none; background-color:#f5f6f7}
+.foot { padding-top:30px; text-align:center; color:#FFF; padding-right:80px;}
+#tip { padding-top:10px; color:#FFF;   background-image:none; text-align:center; padding-right:80px; font-size:14px;}
